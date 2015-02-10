@@ -75,7 +75,6 @@
                 "position"
             ],
             "aesthetics": [
-                "geom_abline",
                 "alpha",
                 "colour",
                 "linetype",
@@ -117,7 +116,6 @@
                 "position"
             ],
             "aesthetics": [
-                "geom_bar",
                 "x",
                 "alpha",
                 "colour",
@@ -144,7 +142,6 @@
                 "position"
             ],
             "aesthetics": [
-                "geom_bin2d",
                 "xmax",
                 "xmin",
                 "ymax",
@@ -196,7 +193,6 @@
                 "position"
             ],
             "aesthetics": [
-                "geom_boxplot",
                 "lower",
                 "middle",
                 "upper",
@@ -233,7 +229,6 @@
                 "linemitre"
             ],
             "aesthetics": [
-                "geom_contour",
                 "x",
                 "y",
                 "alpha",
@@ -261,7 +256,6 @@
                 "position"
             ],
             "aesthetics": [
-                "geom_crossbar",
                 "x",
                 "y",
                 "ymax",
@@ -291,7 +285,6 @@
                 "na.rm"
             ],
             "aesthetics": [
-                "geom_density",
                 "x",
                 "y",
                 "alpha",
@@ -323,7 +316,6 @@
                 "linemitre"
             ],
             "aesthetics": [
-                "geom_density2d",
                 "x",
                 "y",
                 "alpha",
@@ -358,7 +350,6 @@
                 "na.rm"
             ],
             "aesthetics": [
-                "geom_dotplot",
                 "x",
                 "y",
                 "alpha",
@@ -383,7 +374,6 @@
                 "position"
             ],
             "aesthetics": [
-                "geom_errorbar",
                 "x",
                 "ymax",
                 "ymin",
@@ -411,7 +401,6 @@
                 "position"
             ],
             "aesthetics": [
-                "geom_errorbarh",
                 "x",
                 "xmax",
                 "xmin",
@@ -440,7 +429,6 @@
                 "position"
             ],
             "aesthetics": [
-                "geom_freqpoly",
                 "alpha",
                 "colour",
                 "linetype",
@@ -464,7 +452,6 @@
                 "position"
             ],
             "aesthetics": [
-                "geom_hex",
                 "x",
                 "y",
                 "alpha",
@@ -490,7 +477,6 @@
                 "position"
             ],
             "aesthetics": [
-                "geom_histogram",
                 "x",
                 "alpha",
                 "colour",
@@ -518,7 +504,6 @@
                 "position"
             ],
             "aesthetics": [
-                "geom_hline",
                 "alpha",
                 "colour",
                 "linetype",
@@ -543,7 +528,6 @@
                 "na.rm"
             ],
             "aesthetics": [
-                "geom_jitter",
                 "x",
                 "y",
                 "alpha",
@@ -570,7 +554,6 @@
                 "position"
             ],
             "aesthetics": [
-                "geom_line",
                 "x",
                 "y",
                 "alpha",
@@ -596,7 +579,6 @@
                 "position"
             ],
             "aesthetics": [
-                "geom_linerange",
                 "x",
                 "ymax",
                 "ymin",
@@ -623,7 +605,6 @@
                 "stat"
             ],
             "aesthetics": [
-                "geom_map",
                 "map_id",
                 "alpha",
                 "colour",
@@ -654,7 +635,6 @@
                 "na.rm"
             ],
             "aesthetics": [
-                "geom_path",
                 "x",
                 "y",
                 "alpha",
@@ -681,7 +661,6 @@
                 "na.rm"
             ],
             "aesthetics": [
-                "geom_point",
                 "x",
                 "y",
                 "alpha",
@@ -708,7 +687,6 @@
                 "position"
             ],
             "aesthetics": [
-                "geom_pointrange",
                 "x",
                 "y",
                 "ymax",
@@ -738,7 +716,6 @@
                 "position"
             ],
             "aesthetics": [
-                "geom_polygon",
                 "x",
                 "y",
                 "alpha",
@@ -769,7 +746,6 @@
                 "linemitre"
             ],
             "aesthetics": [
-                "geom_quantile",
                 "x",
                 "y",
                 "alpha",
@@ -798,7 +774,6 @@
                 "position"
             ],
             "aesthetics": [
-                "geom_raster",
                 "x",
                 "y",
                 "alpha",
@@ -822,7 +797,6 @@
                 "position"
             ],
             "aesthetics": [
-                "geom_rect",
                 "xmax",
                 "xmin",
                 "ymax",
@@ -852,7 +826,6 @@
                 "na.rm"
             ],
             "aesthetics": [
-                "geom_ribbon",
                 "x",
                 "ymax",
                 "ymin",
@@ -881,7 +854,6 @@
                 "position"
             ],
             "aesthetics": [
-                "geom_rug",
                 "alpha",
                 "colour",
                 "linetype",
@@ -908,7 +880,6 @@
                 "na.rm"
             ],
             "aesthetics": [
-                "geom_segment",
                 "x",
                 "xend",
                 "y",
@@ -936,7 +907,6 @@
                 "position"
             ],
             "aesthetics": [
-                "geom_smooth",
                 "x",
                 "y",
                 "alpha",
@@ -965,7 +935,6 @@
                 "position"
             ],
             "aesthetics": [
-                "geom_step",
                 "alpha",
                 "colour",
                 "linetype",
@@ -990,7 +959,6 @@
                 "position"
             ],
             "aesthetics": [
-                "geom_text",
                 "label",
                 "x",
                 "y",
@@ -1022,7 +990,6 @@
                 "position"
             ],
             "aesthetics": [
-                "geom_tile",
                 "x",
                 "y",
                 "alpha",
@@ -1051,7 +1018,6 @@
                 "position"
             ],
             "aesthetics": [
-                "geom_violin",
                 "x",
                 "y",
                 "alpha",
@@ -1080,7 +1046,6 @@
                 "position"
             ],
             "aesthetics": [
-                "geom_vline",
                 "alpha",
                 "colour",
                 "linetype",
@@ -1112,7 +1077,6 @@
                 "position"
             ],
             "aesthetics": [
-                "stat_bin",
                 "x",
                 "y"
             ]
@@ -1136,7 +1100,6 @@
                 "position"
             ],
             "aesthetics": [
-                "stat_bin2d",
                 "x",
                 "y",
                 "fill"
@@ -1168,7 +1131,6 @@
                 "position"
             ],
             "aesthetics": [
-                "stat_bindot",
                 "x",
                 "y"
             ]
@@ -1192,7 +1154,6 @@
                 "position"
             ],
             "aesthetics": [
-                "stat_binhex",
                 "x",
                 "y",
                 "fill"
@@ -1217,7 +1178,6 @@
                 "position"
             ],
             "aesthetics": [
-                "stat_boxplot",
                 "x",
                 "y"
             ]
@@ -1240,7 +1200,6 @@
                 "position"
             ],
             "aesthetics": [
-                "stat_contour",
                 "x",
                 "y",
                 "z",
@@ -1268,7 +1227,6 @@
                 "position"
             ],
             "aesthetics": [
-                "stat_density",
                 "x",
                 "fill",
                 "y"
@@ -1294,7 +1252,6 @@
                 "position"
             ],
             "aesthetics": [
-                "stat_density2d",
                 "x",
                 "y",
                 "colour",
@@ -1339,7 +1296,6 @@
                 "position"
             ],
             "aesthetics": [
-                "stat_function",
                 "y"
             ]
         },
@@ -1362,7 +1318,6 @@
                 "height"
             ],
             "aesthetics": [
-                "stat_identity",
                 ""
             ]
         },
@@ -1386,7 +1341,6 @@
                 "position"
             ],
             "aesthetics": [
-                "stat_qq",
                 "sample",
                 "x",
                 "y"
@@ -1413,7 +1367,6 @@
                 "position"
             ],
             "aesthetics": [
-                "stat_quantile",
                 "x",
                 "y"
             ]
@@ -1442,7 +1395,6 @@
                 "position"
             ],
             "aesthetics": [
-                "stat_smooth",
                 "x",
                 "y"
             ]
@@ -1464,7 +1416,6 @@
                 "position"
             ],
             "aesthetics": [
-                "stat_spoke",
                 "angle",
                 "radius",
                 "x",
@@ -1490,7 +1441,6 @@
                 "position"
             ],
             "aesthetics": [
-                "stat_sum",
                 "x",
                 "y",
                 "size"
@@ -1513,7 +1463,6 @@
                 "position"
             ],
             "aesthetics": [
-                "stat_summary",
                 "x",
                 "y"
             ]
@@ -1574,17 +1523,14 @@
                 "position"
             ],
             "aesthetics": [
-                "stat_summary2d",
                 "x",
                 "y",
                 "z",
                 "fill",
-                "stat_summary2d",
                 "stat_summary",
                 "x",
                 "y",
                 "z",
-                "stat_summary2d",
                 "x",
                 "y",
                 "z"
@@ -1607,7 +1553,6 @@
                 "position"
             ],
             "aesthetics": [
-                "stat_unique",
                 ""
             ]
         },
@@ -1633,7 +1578,6 @@
                 "kernel"
             ],
             "aesthetics": [
-                "stat_ydensity",
                 "x",
                 "y"
             ]

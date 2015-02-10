@@ -83,6 +83,7 @@ for (i in 1:length(link_nodes)) {
         aesthetics = aesthetics_node %>%
           html_nodes("code") %>%
           html_text()
+        aesthetics = aesthetics[!aesthetics %in% name]
       } else {
         aesthetics = NULL
       }
