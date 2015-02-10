@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="An interactive playground for ggplot2, the most powerful data graphics package there ever was.">
+    <meta name="author" content="Love Hansson">
+    <!--<link rel="icon" href="images/favicon.ico">-->
+
+    <meta property="og:title" content="interactive ggplot2">
+    <meta property="og:description" content="An interactive playground for ggplot2, the most powerful data graphics package there ever was.">
+    <meta property="og:image" content="images/mellokollen.png">
+    <meta property="og:url" content="http://www.mellokollen.se">
+
+    <title>interactive ggplot2</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap theme -->
+    <link href="css/bootstrap-theme.min.css" rel="stylesheet">
+
+    <!-- Selectize CSS -->
+    <!--<link rel="stylesheet" type="text/css" href="selectize.css" />-->
+
+    <!-- TangleKit -->
+    <link href="css/TangleKit.css" rel="stylesheet">
+
+    <!-- local styles -->
+    <link href="fonts/leaguespartan.css" rel="stylesheet">
+    <link href="css/theme.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="js/vendor/html5shiv.min.js"></script>
+    <script src="js/vendor/respond.min.js"></script>
+    <![endif]-->
+
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-59172884-1', 'auto');
+        ga('send', 'pageview');
+
+    </script>
+</head>
+
+<body role="document">
+
+
+
+
+
+
+<div class="container-fluid theme-showcase" role="main">
+
+    <header class="row">
+        <div class="col-xs-12">
+            <h1>interactive ggplot2</h1>
+
+            <p class="intro">An interactive playground for <code><a href="http://ggplot2.org/">ggplot2</a></code></p>
+        </div>
+    </header>
+
+
+
+    <!--<section id="buttonRow" class="row" data-post="1">-->
+        <!--<div class="col-xs-2">-->
+            <!--<select name="ggdata" id="ggdata">-->
+                <!--<option value="diamonds">diamonds</option>-->
+                <!--<option value="mtcars">mtcars</option>-->
+            <!--</select>-->
+        <!--</div>-->
+        <!--<div class="col-xs-2">-->
+            <!--<select name="ggx" id="ggx">-->
+                <!--<option value="carat">carat</option>-->
+                <!--<option value="table">table</option>-->
+            <!--</select>-->
+        <!--</div>-->
+        <!--<div class="col-xs-2">-->
+            <!--<select name="ggy" id="ggy">-->
+                <!--<option value="x">x</option>-->
+                <!--<option value="y">y</option>-->
+            <!--</select>-->
+        <!--</div>-->
+        <!--<div class="col-xs-2">-->
+            <!--<select name="gggeom" id="gggeom">-->
+                <!--<option value="point">point</option>-->
+                <!--<option value="bar">bar</option>-->
+            <!--</select>-->
+        <!--</div>-->
+        <!--<div class="col-xs-2">-->
+            <!--<button id="plotbutton" type="button">Submit to server!</button>-->
+        <!--</div>-->
+    <!--</section> &lt;!&ndash; #firstPost end &ndash;&gt;-->
+
+    <section id="plotCode" class="row highlight example">
+        <!--<div class="col-xs-6" id="cookieExample">-->
+            <!--<code class="language-r" data-lang="r">-->
+                <!--<span class="TKAdjustableNumber" data-var="ggdata"></span>-->
+            <!--</code>-->
+            <!--<samp><p id="calorieCalculator">-->
+                <!--When you eat <span class="TKAdjustableNumber" data-var="cookies"> cookies</span>,-->
+                <!--you consume <b data-var="calories"> calories</b>. That's-->
+                <!--<span data-var="dailyPercent">%</span> of your recommended daily calories.</p>-->
+            <!--</samp>-->
+        <!--</div>-->
+        <div class="col-xs-12" id="ggdataToggle">
+
+            <samp><p id="ggdataSelector">
+                ggplot(<span class="ExpandingList" data-var="ggdata" data-items="diamonds/mtcars/iris"></span>, aes(x = table)) + geom_density()
+                </p>
+            </samp>
+
+            </samp>
+            <!--<p id="example">Let's say you were shopping for-->
+                <!--<span class="ExpandingList" data-var="ggdata" data-items="diamonds/mtcars/iris"></span>.-->
+                <!--A typical <span data-var="clothingInstance"></span> can cost between-->
+                <!--<span data-var="lowPrice" data-format="dollars"></span> and-->
+                <!--<span data-var="highPrice" data-format="dollars"></span>.</p>-->
+
+    </section>
+
+    <section id="plotRow" class="row">
+        <div class="col-xs-10">
+            Plot div
+            <div id="plotdiv"></div>
+        </div>
+    </section>
+
+
+    <footer class="row">
+        <p class="small">
+            interactive ggplot2 by <a href="mailto:love.hansson@gmail.com">LCHansson</a>. Spread the love if you like it!
+        </p>
+    </footer>
+
+</div> <!-- /container -->
+
+
+<!-- Core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="js/vendor/jquery-1.11.2.min.js"></script>
+<script src="js/vendor/bootstrap.min.js"></script>
+<script src="js/vendor/docs.min.js"></script>
+<script type="text/javascript" src="js/vendor/opencpu-0.4.js"> </script>
+<script type="text/javascript" src="js/vendor/selectize.js"></script>
+<script type="text/javascript" src="js/vendor/Tangle.js"></script>
+<script type="text/javascript" src="js/vendor/TangleKit.js"></script>
+<script type="text/javascript" src="js/vendor/MooTools-Core-1.5.1.js"></script>
+<script type="text/javascript" src="js/vendor/sprintf.js"></script>
+<script type="text/javascript" src="js/vendor/BVTouchable.js"></script>
+
+<script type="text/javascript" src="js/main.js"></script>
+<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+<script src="js/vendor/ie10-viewport-bug-workaround.js"></script>
+
+</body>
+</html>

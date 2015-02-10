@@ -1,0 +1,486 @@
+/* Colors */
+
+.gray          { color: grey !important; border-color: grey !important; }
+.btn.gray:hover, .btn.gray:active, .btn.gray:focus       { color: #fff !important; background:   gray; }
+
+
+/* Typography */
+
+h1, h2, h3, h4, h5, h6, .intro, .leaguespartansmall {
+    font-family: 'League Spartan';
+}
+
+.leaguespartansmall {
+    font-size: 1.0em;
+}
+
+h1 {
+    text-transform: uppercase;
+    font-size: 60px;
+    letter-spacing: 3px;
+    text-rendering: optimizeLegibility;
+    text-align: center;
+}
+
+h2 {
+    text-transform: uppercase;
+    font-size: 36px;
+    letter-spacing: 2px;
+    text-rendering: optimizeLegibility;
+    text-align: center;
+}
+
+h3, .intro {
+    font-size: 22px;
+    line-height: 36px;
+    text-align: center;
+}
+
+h2 + h3 {
+    margin-top: 10px;
+}
+
+@media(max-width: 1016px){
+    h1 {
+        font-size: 50px;
+    }
+}
+@media(max-width: 500px){
+    h1 {
+        font-size: 36px;
+    }
+    h2 {
+        font-size: 24px;
+    }
+    h3, .intro {
+        font-size: 18px;
+        line-height: 28px;
+    }
+}
+@media(max-width: 400px){
+    h1 {
+        font-size: 30px;
+    }
+}
+
+body {
+    font: 18px/28px Helvetica, "Helvetica Neue", Arial, sans-serif;
+    font-weight: 200;
+}
+
+.small {
+    font-size: 16px;
+}
+
+@media(max-width: 740px){
+    br {
+        display: none; /* No forced line breaks in smaller sizes */
+    }
+    .modal br {
+        display: inline; /* Except in song lyrics! */
+    }
+}
+
+
+/* Lists */
+
+ol {
+    list-style-type: none;
+    counter-reset: ol-counter;
+    padding: 0;
+    margin: 20px 0;
+    line-height: 32px;
+}
+ol li:before {
+    content: counter(ol-counter) ".";
+    counter-increment: ol-counter;
+    display: inline-block;
+    width: 24px;
+}
+
+
+/* Links */
+
+a:active,
+a:focus,
+a:hover {
+    text-decoration: underline;
+}
+
+a,
+.btn {
+    color: inherit !important;
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    line-height: inherit;
+}
+
+/* Buttons */
+
+.btn {
+    text-decoration: none !important;
+    position: relative;
+}
+.btn-default {
+    background: none;
+    border-radius: 0px;
+    border: 2px solid black;
+    box-shadow: none;
+    text-shadow: none;
+    font-family: "League Spartan";
+    padding: 12px 20px 8px;
+}
+.btn.down,
+.btn.up {
+    padding-left: 40px;
+}
+.btn.down:after,
+.btn.up:after {
+    position: absolute;
+    left: 15px;
+    top: 12px;
+    font-size: 80%;
+}
+.btn.down:after {
+    content: "▼";
+}
+.btn.up:after {
+    content: "▲";
+}
+.btn-songtoggle{
+    padding: 6px 10px 4px;
+}
+
+
+
+/* Layout */
+
+.container-fluid {
+    max-width: 940px;
+}
+section, header {
+    padding-bottom: 40px;
+    border-bottom: solid 1px lightgray;
+}
+
+@media(max-width: 1016px){
+    .container-fluid {
+        margin: 0 4%;
+    }
+}
+
+
+/* Header */
+
+header {
+    position: relative;
+    text-align: center;
+}
+header img {
+    position: absolute;
+    width: 8%;
+    max-width: 80px;
+}
+header .circle   { left:  0;     top: 0; }
+header .plus1    { left:  120px; top: 10px; }
+header .saw      { left:  70px;  top: -40px; }
+header .triangle { right: 0;     top: 0; }
+header .plus2    { right: 70px;  top: -30px; }
+header .sine     { right: 110px; top: 20px; }
+
+@media(max-width: 1016px){
+    header img {
+        position: static;
+    }
+}
+@media(max-width: 740px){
+    header img {
+        width: 10%;
+    }
+}
+
+
+/* Footer */
+
+footer {
+    margin-top: 1em;
+    margin-bottom: 3em;
+}
+footer p {
+    color: gray;
+}
+
+footer a {
+    color: #2b2b2b !important;
+}
+
+
+/* Common elements */
+
+
+.more .btn {
+    margin-top: 20px;
+}
+
+.social {
+    margin-top: 20px;
+}
+
+.social a {
+    display: inline-block;
+    margin-left: 5px;
+}
+
+
+/* Graphs */
+
+svg,
+text {
+    font-family: Helvetica, "Helvetica Neue", Arial, sans-serif;
+    font-size: 16px !important;
+    font-weight: 200 !important;   
+}
+
+text.highcharts-title {
+    font-family: 'League Spartan';
+    font-size: 18px !important;
+}
+
+
+.vertical-center {
+    min-height: 100%;  /* Fallback for vh unit */
+    min-height: 100vh; /* You might also want to use
+                        'height' property instead.
+
+                        Note that for percentage values of
+                        'height' or 'min-height' properties,
+                        the 'height' of the parent element
+                        should be specified explicitly.
+
+                        In this case the parent of '.vertical-center'
+                        is the <body> element */
+
+    /* Make it a flex container */
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+
+    /* Align the bootstrap's container vertically */
+    -webkit-box-align : center;
+    -webkit-align-items : center;
+    -moz-box-align : center;
+    -ms-flex-align : center;
+    align-items : center;
+
+    /* In legacy web browsers such as Firefox 9
+       we need to specify the width of the flex container */
+    /*width: 100%;*/
+
+    /* Also 'margin: 0 auto' doesn't have any effect on flex items in such web browsers
+       hence the bootstrap's container won't be aligned to the center anymore.
+
+       Therefore, we should use the following declarations to get it centered again */
+    -webkit-box-pack : center;
+    -moz-box-pack : center;
+    -ms-flex-pack : center;
+    -webkit-justify-content : center;
+    justify-content : center;
+}
+
+.vcenter {
+    display: inline-block;
+    vertical-align: middle;
+    float: none;
+}
+
+.row, .tspacing {
+    margin-top: 3em;
+}
+
+.tpadding {
+    padding-top: 3em;
+}
+
+.collapse {
+    clear: both;
+}
+
+
+ul.nav-pills>li {
+    width: 50%;
+    border: 2px solid black;
+    margin: 0;
+    font-family: 'League Spartan';
+}
+
+ul.nav-pills .subtitle {
+    font-family: Helvetica, "Helvetica Neue", Arial, sans-serif;
+    font-size: 16px !important;
+    font-weight: 200 !important;
+    display: block;
+}
+
+@media(max-width: 768px){
+    ul.nav-pills .subtitle{
+        display: none;
+    }
+}
+
+
+@-webkit-viewport   { width: device-width; }
+@-moz-viewport      { width: device-width; }
+@-ms-viewport       { width: device-width; }
+@-o-viewport        { width: device-width; }
+@viewport           { width: device-width; }
+
+
+/* Modal */
+
+.modal-content {
+    border-radius: 0;
+}
+.modal-meta {
+    font-size: 16px;
+    line-height: 22px;
+    margin-top: 10px;
+    border-top: 1px solid white;
+    padding-top: 10px;
+}
+
+#firstPost .modal-header {
+    background-color: #00bbdb;
+    color: #ffffff;
+}
+
+#secondPost .modal-header {
+    background-color: #6e328f;
+    color: #ffffff;
+}
+
+/* Tables */
+
+table.dataTable {
+    width: 100%;
+    border-collapse: collapse;
+}
+table.dataTable thead {
+    font-family: 'League Spartan';
+    font-size: 14px;
+}
+table.dataTable tbody td {
+    padding: 6px 10px 6px 10px;
+}
+table.dataTable thead th {
+    border: 2px solid black;   
+    padding: 10px 10px 10px 10px;
+}
+table.dataTable tbody tr {
+    border-bottom: 1px solid lightgray;
+}
+table.dataTable .text {
+    text-align: left;
+}
+table.dataTable .count {
+    width: 20%;
+    text-align: right;
+}
+.dataTables_paginate {
+    margin-top: 10px;
+    text-align: center;
+}
+.dataTables_paginate .paginate_button {
+    padding: 3px 6px;
+    cursor: pointer;
+}
+.dataTables_wrapper {
+    margin-top: 2em;
+}
+
+
+/* Get data */
+
+#getData a {
+    color: #e70074;
+}
+#getData img {
+    width: 80px;
+    float: left;
+    margin-right: 30px;
+}
+#getData h3 {
+    margin-top: 0;
+    text-align: left;
+}
+@media(max-width: 740px){
+    #getData {
+        text-align: center;
+    }
+    #getData h3 {
+        text-align: center;
+    }
+    #getData img {
+        width: 50px;
+        float: none;
+        text-align: center;
+        margin: 0px 0px 20px;
+    }
+}
+
+
+
+.collapsing {
+    -webkit-transition-duration: .55s;
+         -o-transition-duration: .55s;
+            transition-duration: .55s;
+
+}
+
+
+
+@media(min-width:768px) {
+    #firstPost .tab-content > .tab-pane {
+        display: block !important;
+        visibility: visible;
+        float: left;
+        width: 50%;
+    }
+
+    #firstPost .tab-content > .tab-pane ol {
+        margin-top: 5px;
+    }
+
+    #firstPost .nav-pills.blue>li>a,
+    #firstPost .nav-pills.blue>li.blue>a:focus,
+    #firstPost .nav-pills.blue>li>a:hover,
+    #firstPost .nav-pills.blue>li.active>a,
+    #firstPost .nav-pills.blue>li.active.blue>a:focus,
+    #firstPost .nav-pills.blue>li.active>a:hover{
+        text-decoration: initial !important;
+        cursor: default;
+        color: #000000 !important;
+        background-color: transparent !important;
+        /*text-align: left;*/
+        padding: 0;
+    }
+    #firstPost .nav-pills.blue>li {
+        border: none !important;
+    }
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button.current {
+    text-decoration: underline !important;
+}
+
+.toggle-bar {
+    text-align: center;
+}
+
+
+.ExpandingList {
+    color: #46f;
+    border-bottom: 1px dashed #46f;
+    cursor: pointer;
+}
