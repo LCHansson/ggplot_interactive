@@ -13,8 +13,11 @@
 
 Tangle.classes.ExpandingList = {
     initialize: function (element, options, tangle, variable) {
+        //console.log(options);
+        //console.log($("#ggdata").data("foo"));
+
         var isExpanded = false;
-        var items = options.items.split("/");
+        var items = datasets;
 
         var subelements = [];
         subelements.push(new Element("span", { text:"[ " }));
@@ -46,14 +49,30 @@ Tangle.classes.ExpandingList = {
     }
 };
 
+Tangle.classes.TDropdown = {
+
+    initialize: function (element, options, tangle, variable) {
+        element.addEvent("click", function (event) {
+            var keys = Object.keys(window.ggplot_docs[options.set]),
+                position = keys.indexOf(tangle.getValue(variable));
+            //console.log("keys: " + keys + ", options.set: " + options.set +
+            //", position: " + position + ", variable: " + variable);
+            var nextpos = position + 1 > keys.length - 1? position + 1 - keys.length : position + 1;
+            tangle.setValue(variable, keys[nextpos]);
+        });
+    }
+}
+
+
 
 function setUpTangle () {
 
-    var element = document.getElementById("ggdataSelector");
+    var element = document.getElementById("gg_data");
 
     var tangle = new Tangle(element, {
         initialize: function () {
             this.ggdata = "diamonds";
+            //console.log(this.ggdata);
         },
         update: function () {
             //var info = this.clothingInfoByType[this.ggdata];
@@ -68,54 +87,59 @@ function setUpTangle () {
         //    shoes: { instance:"pair of shoes", lowPrice:40, highPrice:100 }
         //}
     });
-}
 
-window.addEvent('domready', function () {
+    var element = document.getElementById("gg_geom");
 
-    setUpTangle();
-    //// Cookie example
-    //var model = {
-    //    initialize: function () {
-    //        this.cookies = 3;
-    //        this.caloriesPerCookie = 50;
-    //        this.caloriesPerDay = 2100;
-    //    },
-    //    update: function () {
-    //        this.calories = this.cookies * this.caloriesPerCookie;
-    //        this.dailyPercent = (100 * this.calories / this.caloriesPerDay).toFixed(2);
-    //    }
-    //};
+    var tangle = new Tangle(element, {
+        initialize: function () {
+            this.gggeom = Object.keys(window.ggplot_docs.geom)[3];
+            //console.log(this.gggeom);
+        },
+        update: function () {
+            var geom = this.gggeom;
+            var aesthetics = window.ggplot_docs.aesth
+            console.log(geom);
+        }
+    });
+
+    //var elements = document.getElementsByClassName("gggeom");
+    //for (el in elements) {
+    //    var tangle = new Tangle(el, {
+    //        initialize: function () {
+    //            this.geom = Object.keys(window.ggplot_docs.geom)[0];
+    //            console.log("Set initial geom to " + Object.keys(window.ggplot_docs.geom)[0]);
+    //        },
+    //        update: function() {
     //
-    //var id = "cookieExample";
-    //console.log(id);
-    //var element = document.getElementById(id);
-    //new Tangle(element,model);
-    //
-    //// ggplot example
-    //var model = {
-    //    initialize: function() {
-    //        this.ggdata = "diamonds";
-    //    },
-    //    update: function() {
-    //        this.dataset = this.ggdata;
-    //    }
+    //        }
+    //    })
     //}
-    //
-    //var id = "ggdataToggle";
-    //var element = document.getElementById(id);
-    //new Tangle(element, model);
-
-});
+}
 
 /* Send plot code to API */
 $(function() {
+    $.ajax({
+        type: "GET",
+        url: "./data/ggplot_docs.json",
+        dataType: "json",
+        success: function (response) {
+            window.ggplot_docs = response;
+            window.ggplot_docs.datasets = { "diamonds": null, "mtcars": null, "iris": null };
+            //console.log("Loaded data; firing up Tangle");
+            setUpTangle();
+        },
+        error: function (jqXHR, textStatus, errorThrown) {
+            console.log("Error!" + textStatus);
+        }
+    });
+
     $("#plotbutton").on("click", function(e) {
         // Build ggplot command
-        var plotcode = "ggplot(" +
-            $("#ggdata").val() +
-                ", aes(x=" +
-                    $("#ggx").val() +
-                    ")) + geom_density()"
+        var plotcode = $("#ggplotCode").text()
+                //+
+                //", aes(x=" +
+                //    $("#ggx").val() +
+                //    ")) + geom_density()"
             ;
         console.log(plotcode);
 
