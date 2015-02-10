@@ -490,3 +490,14 @@ table.dataTable .count {
     border-bottom: 1px dashed #46f;
     cursor: pointer;
 }
+
+.ggPlusElement {
+    color: #46f;
+    /*border-bottom: 1px dashed #46f;*/
+    cursor: pointer;
+}
+
+.ggAddElement {
+    /*border-bottom: 1px dashed #46f;*/
+    cursor: pointer;
+}

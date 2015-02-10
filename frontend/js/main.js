@@ -88,7 +88,7 @@ function setUpTangle () {
         //}
     });
 
-    var element = document.getElementById("gg_geom");
+    var element = document.getElementById("gg_element1");
 
     var tangle = new Tangle(element, {
         initialize: function () {
