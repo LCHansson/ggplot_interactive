@@ -106,14 +106,9 @@
                 <!--<span data-var="dailyPercent">%</span> of your recommended daily calories.</p>-->
             <!--</samp>-->
         <!--</div>-->
-        <div class="col-xs-12" id="ggdataToggle">
+        <div class="col-xs-12" id="ggplotContainer">
 
-            <samp>ggplot(
-                <b id="gg_data"><span class="TDropdown" data-var="ggdata" data-set="datasets" ></span></b>
-                , aes(x = table)) +
-                <b id="gg_geom"><span class="TDropdown" data-var="gggeom" data-set="geom" ></span></b>
-                ()
-            </samp>
+            <samp id="ggplotCode">ggplot(<b id="gg_data"><span class="TDropdown" data-var="ggdata" data-set="datasets" ></span></b>, aes(x = table)) + <b id="gg_geom"><span class="TDropdown" data-var="gggeom" data-set="geom" ></span></b>()</samp>
             <!--<p id="example">Let's say you were shopping for-->
             <!--<span class="ExpandingList" data-var="ggdata" data-items="diamonds/mtcars/iris"></span>.-->
             <!--A typical <span data-var="clothingInstance"></span> can cost between-->
