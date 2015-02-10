@@ -97,8 +97,8 @@ function setUpTangle () {
         },
         update: function () {
             var geom = this.gggeom;
-            var aesthetics = window.ggplot_docs.aesth
-            console.log(geom);
+            var aesthetics = window.ggplot_docs.geom[geom].aesthetics || ['x', 'y'];
+            console.log(aesthetics);
         }
     });
 
@@ -124,7 +124,6 @@ $(function() {
         dataType: "json",
         success: function (response) {
             window.ggplot_docs = response;
-            window.ggplot_docs.datasets = { "diamonds": null, "mtcars": null, "iris": null };
             //console.log("Loaded data; firing up Tangle");
             setUpTangle();
         },
@@ -135,12 +134,7 @@ $(function() {
 
     $("#plotbutton").on("click", function(e) {
         // Build ggplot command
-        var plotcode = $("#ggplotCode").text()
-                //+
-                //", aes(x=" +
-                //    $("#ggx").val() +
-                //    ")) + geom_density()"
-            ;
+        var plotcode = $("#ggplotCode").text();
         console.log(plotcode);
 
         e.preventDefault();

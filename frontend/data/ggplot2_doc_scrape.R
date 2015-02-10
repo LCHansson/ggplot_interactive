@@ -111,6 +111,14 @@ for (i in 1:length(link_nodes)) {
   links[[doctype]][[name]] = link_data
 }
 
+# Add dataset docs
+datasets = list(
+  "diamonds" = names(diamonds),
+  "mtcars" = names(mtcars),
+  "iris" = names(iris)
+)
+
+links[["datasets"]] = datasets
 
 # Write to JSON
 json <- jsonlite::toJSON(
