@@ -92,9 +92,7 @@
                 <!--<option value="bar">bar</option>-->
             <!--</select>-->
         <!--</div>-->
-        <!--<div class="col-xs-2">-->
-            <!--<button id="plotbutton" type="button">Submit to server!</button>-->
-        <!--</div>-->
+
     <!--</section> &lt;!&ndash; #firstPost end &ndash;&gt;-->
 
     <section id="plotCode" class="row highlight example">
@@ -110,18 +108,21 @@
         <!--</div>-->
         <div class="col-xs-12" id="ggdataToggle">
 
-            <samp><p id="ggdataSelector">
-                ggplot(<span class="ExpandingList" data-var="ggdata" data-items="diamonds/mtcars/iris"></span>, aes(x = table)) + geom_density()
-                </p>
-            </samp>
-
+            <samp>ggplot(
+                <b id="gg_data"><span class="TDropdown" data-var="ggdata" data-set="datasets" ></span></b>
+                , aes(x = table)) +
+                <b id="gg_geom"><span class="TDropdown" data-var="gggeom" data-set="geom" ></span></b>
+                ()
             </samp>
             <!--<p id="example">Let's say you were shopping for-->
-                <!--<span class="ExpandingList" data-var="ggdata" data-items="diamonds/mtcars/iris"></span>.-->
-                <!--A typical <span data-var="clothingInstance"></span> can cost between-->
-                <!--<span data-var="lowPrice" data-format="dollars"></span> and-->
-                <!--<span data-var="highPrice" data-format="dollars"></span>.</p>-->
-
+            <!--<span class="ExpandingList" data-var="ggdata" data-items="diamonds/mtcars/iris"></span>.-->
+            <!--A typical <span data-var="clothingInstance"></span> can cost between-->
+            <!--<span data-var="lowPrice" data-format="dollars"></span> and-->
+            <!--<span data-var="highPrice" data-format="dollars"></span>.</p>-->
+            <div class="col-xs-2">
+                <button id="plotbutton" type="button">Submit to server!</button>
+            </div>
+        </div>
     </section>
 
     <section id="plotRow" class="row">
