@@ -63,6 +63,20 @@ Tangle.classes.TDropdown = {
     }
 }
 
+Tangle.classes.TDaesthetics = {
+
+    initialize: function (element, options, tangle, variable) {
+        element.addEvent("click", function (event) {
+            var scope = options.scope;
+            // TODO: Fetch appropriate data for geoms based on scope
+//             var geoms = tangle.getValue(gggeom);
+//             console.log("scope: " + scope + ", geom: " + geoms);
+            
+            var allowed_aes = window.ggplot_docs.geom["geom_density"].aesthetics;
+            console.log("allowed aesthetics: " + allowed_aes);
+        });
+    }
+}
 
 
 function setUpTangle () {
@@ -99,6 +113,24 @@ function setUpTangle () {
             var geom = this.gggeom;
             var aesthetics = window.ggplot_docs.geom[geom].aesthetics || ['x', 'y'];
             console.log(aesthetics);
+
+            this.ggaes = aesthetics[0];
+        }
+    });
+
+    var element = document.getElementById("gg_aes");
+
+    var tangle = new Tangle(element, {
+        initialize: function () {
+            this.ggaes = "x";
+            //console.log(this.ggaes);
+        },
+        update: function () {
+//             var geom = this.gggeom;
+//             var aesthetics = window.ggplot_docs.geom[geom].aesthetics || ['x', 'y'];
+//             console.log(aesthetics);
+
+//             this.ggaes = aesthetics[0];
         }
     });
 
@@ -142,6 +174,7 @@ $(function() {
 
         var code = "parse(text = \"library(ggplot2);" + plotcode + "\");";
         console.log("Executing code: '" + code + "'");
+        window.code = code;
 
         var response = $.ajax({
             type: "POST",
