@@ -479,30 +479,18 @@ table.dataTable .count {
 }
 
 
-.ExpandingList {
-    color: #46f;
-    border-bottom: 1px dashed #46f;
-    cursor: pointer;
-}
-
-.TDropdown{
-    color: #46f;
-    border-bottom: 1px dashed #46f;
-    cursor: pointer;
-}
-
-.ggPlusElement {
-    color: #46f;
-    /*border-bottom: 1px dashed #46f;*/
-    cursor: pointer;
-}
-
-.ggAddElement {
-    /*border-bottom: 1px dashed #46f;*/
-    cursor: pointer;
-}
-
 #ggplotContainer {
     text-indent:-1.5em;
     margin-left:1.5em;
+}
+
+    /*border-bottom: 1px dashed #46f;*/
+.interactive {
+    color: #46f;
+    border-bottom: 1px dashed #46f;
+    cursor: pointer;
+}
+
+.modifiable {
+    font-weight: bold;
 }

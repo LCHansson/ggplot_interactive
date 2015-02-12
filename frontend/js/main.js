@@ -2,153 +2,96 @@
  * Created by love on 09/02/15.
  */
 
-//var getLoc = {};
 
-/* Selectize */
-//$(function() {
-//    $('select').selectize(options);
-//});
+function setupggDOM (data) {
+    // Set up data
+    var interactive_elements = $(".interactive");
 
-/* tangle */
+    /* DATASET ELEMENTS */
+    // Loop through all elements and assign them with reasonable properties and onClick behaviour
+    $(".data").data("allowed_datasets", Object.getOwnPropertyNames(data.datasets));
+    console.log($(".data").data("allowed_datasets"));
 
-Tangle.classes.ExpandingList = {
-    initialize: function (element, options, tangle, variable) {
-        //console.log(options);
-        //console.log($("#ggdata").data("foo"));
+    // Cycle through datasets
+    // TODO: Maybe replace with selection menu later?
+    $(".data").click(function() {
+        console.log("You have clicked a data set name.");
+        var current_data = $(this).text(),
+            data_pos = $(this).data("allowed_datasets").indexOf(current_data),
+            next_pos = data_pos + 1 > $(this).data("allowed_datasets").length - 1
+                ? data_pos + 1 - $(this).data("allowed_datasets").length
+                : data_pos + 1,
+            next_data = $(this).data("allowed_datasets")[next_pos];
 
-        var isExpanded = false;
-        var items = datasets;
+        $(this).text(next_data);
 
-        var subelements = [];
-        subelements.push(new Element("span", { text:"[ " }));
-        items.each(function (item, index) {
-            var itemElement = new Element("span", { "class":"ExpandingListItem", text:item });
-            itemElement.onclick = function () { itemWasClicked(item); }
-            subelements.push(itemElement);
-            if (index < items.length - 1) {
-                subelements.push(new Element("span", { text:", " }));
-            }
-        });
-        subelements.push(new Element("span", { text:" ]" }));
+        // TODO:
+        // - cycleAllAesUsingThisData();
+        // - or: invalidatePlotButtonAndUnderlineFaultyElements();
+    });
 
-        subelements.each(function (subelement) { subelement.inject(element, "bottom"); });
-
-        function itemWasClicked (item) {
-            isExpanded = !isExpanded;
-            tangle.setValue(variable, item);
-            update(element,item);  // update expanded, even if variable doesn't change
-        }
-
-        function update (element, value) {
-            subelements.each(function (subelement) {
-                var text = subelement.get("text");
-                subelement.style.display = (isExpanded || text == value) ? "inline" : "none";
-            });
-        }
-        this.update = update;
-    }
-};
-
-Tangle.classes.TDropdown = {
-
-    initialize: function (element, options, tangle, variable) {
-        element.addEvent("click", function (event) {
-            var keys = Object.keys(window.ggplot_docs[options.set]),
-                position = keys.indexOf(tangle.getValue(variable));
-            //console.log("keys: " + keys + ", options.set: " + options.set +
-            //", position: " + position + ", variable: " + variable);
-            var nextpos = position + 1 > keys.length - 1? position + 1 - keys.length : position + 1;
-            tangle.setValue(variable, keys[nextpos]);
-        });
-    }
-}
-
-Tangle.classes.TDaesthetics = {
-
-    initialize: function (element, options, tangle, variable) {
-        element.addEvent("click", function (event) {
-            var scope = options.scope;
-            // TODO: Fetch appropriate data for geoms based on scope
-//             var geoms = tangle.getValue(gggeom);
-//             console.log("scope: " + scope + ", geom: " + geoms);
-            
-            var allowed_aes = window.ggplot_docs.geom["geom_density"].aesthetics;
-            console.log("allowed aesthetics: " + allowed_aes);
-        });
-    }
-}
+    /* AESTHETICS */
+    $(".aes_param").click(function() {
+        console.log("You ahve clicked an aes parameter.");
+        // Get scope
+        var parent = $(this).parent();
+        if (parent.attr('class') != "scope") {
+            console.log("Something appears to be wrong with the DOM; was really expecting the parent of this element to be a '<span class=\"scope\">'...");
+            return;
+        };
+        var scope = parent.attr('id');
 
 
-function setUpTangle () {
-
-    var element = document.getElementById("gg_data");
-
-    var tangle = new Tangle(element, {
-        initialize: function () {
-            this.ggdata = "diamonds";
-            //console.log(this.ggdata);
-        },
-        update: function () {
-            //var info = this.clothingInfoByType[this.ggdata];
-            //this.clothingInstance = info.instance;
-            //this.lowPrice = info.lowPrice;
-            //this.highPrice = info.highPrice;
-        }
-        //clothingInfoByType: {
-        //    hats: { instance:"hat", lowPrice:3, highPrice:20 },
-        //    shirts: { instance:"shirt", lowPrice:9, highPrice:30 },
-        //    pants: { instance:"pair of pants", lowPrice:30, highPrice:70 },
-        //    shoes: { instance:"pair of shoes", lowPrice:40, highPrice:100 }
+        //if (scope == "canvas") {
+        //    if ($(this).attr('data-type') == "varname") {
+                var active_geoms = $(".geom").text();
+                    //allowed_aes = ,
+                    //current_name = $(this).text(),
+                    //name_pos = data_names.indexOf(current_name),
+                    //next_pos = name_pos + 1 > data_names.length - 1
+                    //    ? name_pos + 1 - data_names.length
+                    //    : name_pos + 1,
+                    //next_name = data_names[next_pos];
+                //
+                //console.log("You have clicked an aes attribute that is a variable name.\n\tCurrent dataset: " + active_dataset + "\n\tAvailable names: " + data_names + "\n\tCurrent name: " + current_name  + "\n\tNext name: " + next_name);
+                //$(this).text(next_name);
+                console.log("Active geoms: " + active_geoms);
+            //}
         //}
-    });
 
-    var element = document.getElementById("gg_element1");
+    })
 
-    var tangle = new Tangle(element, {
-        initialize: function () {
-            this.gggeom = Object.keys(window.ggplot_docs.geom)[3];
-            //console.log(this.gggeom);
-        },
-        update: function () {
-            var geom = this.gggeom;
-            var aesthetics = window.ggplot_docs.geom[geom].aesthetics || ['x', 'y'];
-            console.log(aesthetics);
+    $(".aes_arg").click(function() {
+        // Get scope
+        var parent = $(this).parent();
+        if (parent.attr('class') != "scope") { return; };
+        var scope = parent.attr('id');
 
-            this.ggaes = aesthetics[0];
+
+        if (scope == "canvas") {
+            if ($(this).attr('data-type') == "varname") {
+                // getDataset();
+                var active_dataset = $(this).parents(".scope").find(".data").text(),
+                    data_names = data.datasets[active_dataset],
+                    current_name = $(this).text(),
+                    name_pos = data_names.indexOf(current_name),
+                    next_pos = name_pos + 1 > data_names.length - 1
+                        ? name_pos + 1 - data_names.length
+                        : name_pos + 1,
+                    next_name = data_names[next_pos];
+
+                console.log("You have clicked an aes attribute that is a variable name.\n\tCurrent dataset: " + active_dataset + "\n\tAvailable names: " + data_names + "\n\tCurrent name: " + current_name  + "\n\tNext name: " + next_name);
+                $(this).text(next_name);
+            }
         }
+
     });
 
-    var element = document.getElementById("gg_aes");
 
-    var tangle = new Tangle(element, {
-        initialize: function () {
-            this.ggaes = "x";
-            //console.log(this.ggaes);
-        },
-        update: function () {
-//             var geom = this.gggeom;
-//             var aesthetics = window.ggplot_docs.geom[geom].aesthetics || ['x', 'y'];
-//             console.log(aesthetics);
-
-//             this.ggaes = aesthetics[0];
-        }
-    });
-
-    //var elements = document.getElementsByClassName("gggeom");
-    //for (el in elements) {
-    //    var tangle = new Tangle(el, {
-    //        initialize: function () {
-    //            this.geom = Object.keys(window.ggplot_docs.geom)[0];
-    //            console.log("Set initial geom to " + Object.keys(window.ggplot_docs.geom)[0]);
-    //        },
-    //        update: function() {
-    //
-    //        }
-    //    })
-    //}
 }
 
-/* Send plot code to API */
+
+/* Init */
 $(function() {
     $.ajax({
         type: "GET",
@@ -157,7 +100,7 @@ $(function() {
         success: function (response) {
             window.ggplot_docs = response;
             //console.log("Loaded data; firing up Tangle");
-            setUpTangle();
+            setupggDOM(window.ggplot_docs);
         },
         error: function (jqXHR, textStatus, errorThrown) {
             console.log("Error!" + textStatus);
@@ -166,7 +109,7 @@ $(function() {
 
     $("#plotbutton").on("click", function(e) {
         // Build ggplot command
-        var plotcode = $("#ggplotCode").text();
+        var plotcode = $("#ggplotCode").text().replace(/[\n\t ]+/g, "");
         console.log(plotcode);
 
         e.preventDefault();
@@ -203,5 +146,5 @@ $(function() {
     });
 
     // Activate plot on page load
-    // $("#plotbutton").trigger("click");
+    $("#plotbutton").trigger("click");
 });

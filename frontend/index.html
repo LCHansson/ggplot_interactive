@@ -36,16 +36,16 @@
     <script src="js/vendor/respond.min.js"></script>
     <![endif]-->
 
-<!--     <script>
-        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    <!--<script>-->
+        <!--(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){-->
+            <!--(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),-->
+                <!--m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)-->
+        <!--})(window,document,'script','//www.google-analytics.com/analytics.js','ga');-->
 
-        ga('create', 'UA-59172884-1', 'auto');
-        ga('send', 'pageview'); -->
+        <!--ga('create', 'UA-59172884-1', 'auto');-->
+        <!--ga('send', 'pageview');-->
 
-    </script>
+    <!--</script>-->
 </head>
 
 <body role="document">
@@ -65,75 +65,34 @@
         </div>
     </header>
 
-
-
-    <!--<section id="buttonRow" class="row" data-post="1">-->
-        <!--<div class="col-xs-2">-->
-            <!--<select name="ggdata" id="ggdata">-->
-                <!--<option value="diamonds">diamonds</option>-->
-                <!--<option value="mtcars">mtcars</option>-->
-            <!--</select>-->
-        <!--</div>-->
-        <!--<div class="col-xs-2">-->
-            <!--<select name="ggx" id="ggx">-->
-                <!--<option value="carat">carat</option>-->
-                <!--<option value="table">table</option>-->
-            <!--</select>-->
-        <!--</div>-->
-        <!--<div class="col-xs-2">-->
-            <!--<select name="ggy" id="ggy">-->
-                <!--<option value="x">x</option>-->
-                <!--<option value="y">y</option>-->
-            <!--</select>-->
-        <!--</div>-->
-        <!--<div class="col-xs-2">-->
-            <!--<select name="gggeom" id="gggeom">-->
-                <!--<option value="point">point</option>-->
-                <!--<option value="bar">bar</option>-->
-            <!--</select>-->
-        <!--</div>-->
-
-    <!--</section> &lt;!&ndash; #firstPost end &ndash;&gt;-->
-
     <section id="plotCode" class="row highlight example">
-        <!--<div class="col-xs-6" id="cookieExample">-->
-            <!--<code class="language-r" data-lang="r">-->
-                <!--<span class="TKAdjustableNumber" data-var="ggdata"></span>-->
-            <!--</code>-->
-            <!--<samp><p id="calorieCalculator">-->
-                <!--When you eat <span class="TKAdjustableNumber" data-var="cookies"> cookies</span>,-->
-                <!--you consume <b data-var="calories"> calories</b>. That's-->
-                <!--<span data-var="dailyPercent">%</span> of your recommended daily calories.</p>-->
-            <!--</samp>-->
-        <!--</div>-->
         <div class="col-xs-9" id="ggplotContainer">
             <samp id="ggplotCode">
-                ggplot(
-                <b id="gg_data">
-                    <span class="TDropdown" data-var="ggdata" data-set="datasets" ></span>
-                </b>
-                ,
-<!--                 <span id="gg_aes" data-scope="global"> -->
-                aes(
-                <b id="gg_aes">
-                    <span class="TDaesthetics" data-var="ggaes" data-scope="global"></span>
-                </b>
-                    x = table))
-                </span> +
+                <!-- Canvas call -->
+                <span id="canvas" class="scope">
+                    <span class="ggplot">ggplot</span>(
+                    <span class="data modifiable interactive">diamonds</span>,
+                    <span class="ggplot-params"></span>
+                    <!-- Aesthetics for canvas -->
+                    <span class="aes">aes(</span>
+                    <span class="aes_param modifiable interactive">x</span>
+                    <span class="aes_param_eq interactive">=</span>
+                    <span class="aes_arg modifiable interactive" data-type="varname">table</span>))
+                    <span class="ggplot_plus interactive">+</span>
+                </span>
                 <br/>
-                <b id="gg_element1">
-                    <span class="TDropdown" data-var="gggeom" data-set="geom" ></span>
-                </b>()
-            </samp> 
+                <!--1st element: so we have something to show on init-->
+                <!--(i.e. the user can just press a button to get a result-->
+                <span id="element_1" class="scope">
+                    <span class="geom element modifiable interactive">geom_density</span>(
+                    <span class="element-params modifiable interactive"></span>
+                    <span class="element-aes modifiable interactive"></span>)
+                </span>
+            </samp>
             <br/>
             <samp id="addElementOperator" class="ggPlusElement gray">
                 add element...
             </samp>
-            <!--<p id="example">Let's say you were shopping for-->
-            <!--<span class="ExpandingList" data-var="ggdata" data-items="diamonds/mtcars/iris"></span>.-->
-            <!--A typical <span data-var="clothingInstance"></span> can cost between-->
-            <!--<span data-var="lowPrice" data-format="dollars"></span> and-->
-            <!--<span data-var="highPrice" data-format="dollars"></span>.</p>-->
         </div>
         <div class="col-xs-2">
             <button id="plotbutton" type="button">Draw plot</button>
@@ -165,12 +124,12 @@
 <script src="js/vendor/bootstrap.min.js"></script>
 <script src="js/vendor/docs.min.js"></script>
 <script type="text/javascript" src="js/vendor/opencpu-0.4.js"> </script>
-<script type="text/javascript" src="js/vendor/selectize.js"></script>
-<script type="text/javascript" src="js/vendor/Tangle.js"></script>
-<script type="text/javascript" src="js/vendor/TangleKit.js"></script>
-<script type="text/javascript" src="js/vendor/MooTools-Core-1.5.1.js"></script>
-<script type="text/javascript" src="js/vendor/sprintf.js"></script>
-<script type="text/javascript" src="js/vendor/BVTouchable.js"></script>
+<!--<script type="text/javascript" src="js/vendor/selectize.js"></script>-->
+<!--<script type="text/javascript" src="js/vendor/Tangle.js"></script>-->
+<!--<script type="text/javascript" src="js/vendor/TangleKit.js"></script>-->
+<!--<script type="text/javascript" src="js/vendor/MooTools-Core-1.5.1.js"></script>-->
+<!--<script type="text/javascript" src="js/vendor/sprintf.js"></script>-->
+<!--<script type="text/javascript" src="js/vendor/BVTouchable.js"></script>-->
 
 <script type="text/javascript" src="js/main.js"></script>
 <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
