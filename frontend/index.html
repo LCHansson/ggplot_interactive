@@ -70,28 +70,32 @@
             <samp id="ggplotCode">
                 <!-- Canvas call -->
                 <span id="canvas" class="scope">
-                    <span class="ggplot">ggplot</span>(
-                    <span class="data modifiable interactive">diamonds</span>,
-                    <span class="ggplot-params"></span>
-                    <!-- Aesthetics for canvas -->
-                    <span class="aes">aes(</span>
-                    <span class="aes_param modifiable interactive">x</span>
-                    <span class="aes_param_eq interactive">=</span>
-                    <span class="aes_arg modifiable interactive" data-type="varname">table</span>))
+                    <span class="ggplot">ggplot(
+                        <span class="data modifiable interactive">diamonds</span>,
+                        <span class="ggplot-params"></span>
+                        <!-- Aesthetics for canvas -->
+                        <span class="aes">aes(
+                            <span class="parameter modifiable interactive">x</span>
+                            <span class="equals interactive">=</span>
+                            <span class="argument modifiable interactive" data-type="varname">table</span>))
+                        </span>
+                    </span>
                     <span class="ggplot_plus interactive">+</span>
                 </span>
                 <br/>
                 <!--1st element: so we have something to show on init-->
                 <!--(i.e. the user can just press a button to get a result-->
                 <span id="element_1" class="scope">
-                    <span class="geom element modifiable interactive">geom_density</span>(
-                    <span class="element-params modifiable interactive"></span>
-                    <span class="element-aes modifiable interactive"></span>)
+                    <span class="element geom modifiable interactive">
+                        <span class="element-name">geom_density</span>(
+                        <span class="parameter modifiable interactive"></span>
+                        <span class="aes modifiable interactive"></span>)
+                    </span>
                 </span>
             </samp>
             <br/>
             <samp id="addElementOperator" class="ggPlusElement gray">
-                add element...
+                <span id="add-element" class="interactive grey">add element...</span>
             </samp>
         </div>
         <div class="col-xs-2">
