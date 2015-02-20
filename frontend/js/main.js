@@ -3,11 +3,16 @@
  */
 
 
+function addDialog(options) {
+
+}
+
 function setupggDOM (data) {
     // Set up data
     var interactive_elements = $(".interactive");
 
-    /* DATASET ELEMENTS */
+
+    /* DATASET */
     // Loop through all elements and assign them with reasonable properties and onClick behaviour
     $(".data").data("allowed_datasets", Object.getOwnPropertyNames(data.datasets));
     console.log($(".data").data("allowed_datasets"));
@@ -30,64 +35,110 @@ function setupggDOM (data) {
         // - or: invalidatePlotButtonAndUnderlineFaultyElements();
     });
 
-    /* AESTHETICS */
-    $(".aes_param").click(function() {
-        console.log("You ahve clicked an aes parameter.");
+
+    /* PARAMETERS */
+    $(".parameter").click(function() {
+        console.log("You have clicked an aes parameter.");
         // Get scope
-        var parent = $(this).parent();
+        var parent = $(this).parents(".scope");
         if (parent.attr('class') != "scope") {
             console.log("Something appears to be wrong with the DOM; was really expecting the parent of this element to be a '<span class=\"scope\">'...");
             return;
         };
         var scope = parent.attr('id');
 
-
-        //if (scope == "canvas") {
-        //    if ($(this).attr('data-type') == "varname") {
-                var active_geoms = $(".geom").text();
-                    //allowed_aes = ,
-                    //current_name = $(this).text(),
-                    //name_pos = data_names.indexOf(current_name),
-                    //next_pos = name_pos + 1 > data_names.length - 1
-                    //    ? name_pos + 1 - data_names.length
-                    //    : name_pos + 1,
-                    //next_name = data_names[next_pos];
-                //
-                //console.log("You have clicked an aes attribute that is a variable name.\n\tCurrent dataset: " + active_dataset + "\n\tAvailable names: " + data_names + "\n\tCurrent name: " + current_name  + "\n\tNext name: " + next_name);
-                //$(this).text(next_name);
-                console.log("Active geoms: " + active_geoms);
-            //}
-        //}
-
-    })
-
-    $(".aes_arg").click(function() {
-        // Get scope
-        var parent = $(this).parent();
-        if (parent.attr('class') != "scope") { return; };
-        var scope = parent.attr('id');
-
-
         if (scope == "canvas") {
-            if ($(this).attr('data-type') == "varname") {
-                // getDataset();
-                var active_dataset = $(this).parents(".scope").find(".data").text(),
-                    data_names = data.datasets[active_dataset],
-                    current_name = $(this).text(),
-                    name_pos = data_names.indexOf(current_name),
-                    next_pos = name_pos + 1 > data_names.length - 1
-                        ? name_pos + 1 - data_names.length
-                        : name_pos + 1,
-                    next_name = data_names[next_pos];
-
-                console.log("You have clicked an aes attribute that is a variable name.\n\tCurrent dataset: " + active_dataset + "\n\tAvailable names: " + data_names + "\n\tCurrent name: " + current_name  + "\n\tNext name: " + next_name);
-                $(this).text(next_name);
-            }
+            var active_geoms = $(".geom .element-name").text(),
+                allowed_aes = data.geom[active_geoms].aesthetics;
+            // TODO:
+            // - allowed_aes = active_geoms.forEach(function(x) { return data.geom[x].aesthetics; });
+        } else {
+            //    TODO:
+            //    - getLocallyScopedElement();
+            //    - getAllowedAes();
         }
+
+        //console.log("attr('data-type'): " + $(this).attr('data-type'));
+
+        var current_aesthetic = $(this).text(),
+            name_pos = allowed_aes.indexOf(current_aesthetic),
+            next_pos = name_pos + 1 > allowed_aes.length - 1
+                ? name_pos + 1 - allowed_aes.length
+                : name_pos + 1,
+            next_name = allowed_aes[next_pos];
+
+        console.log("Active geoms: " + active_geoms + "\n\tAllowed aesthetics: " + allowed_aes + "\n\tCurrent aesthetic: " + current_aesthetic+ "\n\tNext name: " + next_name);
+
+        $(this).text(next_name);
+
+        // TODO:
+        // - modifyAesArgument();
+
+        //current_name = $(this).text(),
+        //name_pos = data_names.indexOf(current_name),
+        //next_pos = name_pos + 1 > data_names.length - 1
+        //    ? name_pos + 1 - data_names.length
+        //    : name_pos + 1,
+        //next_name = data_names[next_pos];
+
+        //console.log("You have clicked an aes attribute that is a variable name.\n\tCurrent dataset: " + active_dataset + "\n\tAvailable names: " + data_names + "\n\tCurrent name: " + current_name  + "\n\tNext name: " + next_name);
+        //$(this).text(next_name);
+        //console.log("Active geoms: " + active_geoms + "\n\tAllowed aesthetics: " + allowed_aes);
+        //}
+        //}
 
     });
 
 
+    /* ARGUMENTS */
+    $(".argument").click(function() {
+        // Get scope
+        var parent = $(this).parents(".scope");
+        if (parent.attr('class') != "scope") { return; };
+        var scope = parent.attr('id');
+
+        // If parent is aes, make aes modifications.
+        if ( $(this).parent().attr('class') == 'aes') {
+            // Scope is global ('canvas')
+            if (scope == "canvas") {
+                if ($(this).attr('data-type') == "varname") {
+                    // getDataset();
+                    var active_dataset = $(this).parents(".scope").find(".data").text(),
+                        data_names = data.datasets[active_dataset],
+                        current_name = $(this).text(),
+                        name_pos = data_names.indexOf(current_name),
+                        next_pos = name_pos + 1 > data_names.length - 1
+                            ? name_pos + 1 - data_names.length
+                            : name_pos + 1,
+                        next_name = data_names[next_pos];
+
+                    console.log("You have clicked an aes argument that is a variable name.\n\tCurrent dataset: " + active_dataset + "\n\tAvailable names: " + data_names + "\n\tCurrent name: " + current_name + "\n\tNext name: " + next_name);
+                    $(this).text(next_name);
+                }
+            }
+            // Scope is local (geom or stat)
+            else {
+                console.log("You have clicked an aes argument with local scope.");
+            }
+        }
+
+        // Parent is not aes, but element
+        else {
+            // Global scope
+            if (scope == "canvas") {
+                console.log("You have clicked an element argument with global scope.");
+            }
+            // Local scope
+            else {
+                console.log("You have clicked an element argument with localscope.");
+            }
+        }
+    });
+
+    /* ELEMENT */
+    $(".element-name").click(function() {
+        console.log("You have clicked an element");
+    })
 }
 
 
