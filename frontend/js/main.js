@@ -3,8 +3,19 @@
  */
 
 
-function addDialog(options) {
+function addDialog(event, data) {
+    console.log("Setting up dialog thingy");
+    var $dialog = $('#element-selector'),
+        x = event.pageX,
+        y = event.pageY;
 
+    // Clear of previous HTML
+    $dialog.empty();
+
+    console.log([x, y]);
+
+    $dialog.css("left", x).css("top", y);
+    $dialog.append('<p>Test</p>');
 }
 
 function setupggDOM (data) {
@@ -19,16 +30,18 @@ function setupggDOM (data) {
 
     // Cycle through datasets
     // TODO: Maybe replace with selection menu later?
-    $(".data").click(function() {
+    $(".data").click(function(event) {
         console.log("You have clicked a data set name.");
         var current_data = $(this).text(),
-            data_pos = $(this).data("allowed_datasets").indexOf(current_data),
-            next_pos = data_pos + 1 > $(this).data("allowed_datasets").length - 1
-                ? data_pos + 1 - $(this).data("allowed_datasets").length
+            allowed_datasets = $(this).data("allowed_datasets"),
+            data_pos = allowed_datasets.indexOf(current_data),
+            next_pos = data_pos + 1 > allowed_datasets.length - 1
+                ? data_pos + 1 - allowed_datasets.length
                 : data_pos + 1,
-            next_data = $(this).data("allowed_datasets")[next_pos];
+            next_data = allowed_datasets[next_pos];
 
         $(this).text(next_data);
+        addDialog(event, allowed_datasets);
 
         // TODO:
         // - cycleAllAesUsingThisData();
@@ -71,8 +84,10 @@ function setupggDOM (data) {
 
         $(this).text(next_name);
 
-        // TODO:
-        // - modifyAesArgument();
+        // modifyAesArgument();
+        var valid_arguments = getValidAesArguments(current_aesthetic);
+        updateAesArgument(valid_arguments);
+
 
         //current_name = $(this).text(),
         //name_pos = data_names.indexOf(current_name),
@@ -130,7 +145,7 @@ function setupggDOM (data) {
             }
             // Local scope
             else {
-                console.log("You have clicked an element argument with localscope.");
+                console.log("You have clicked an element argument with local scope.");
             }
         }
     });

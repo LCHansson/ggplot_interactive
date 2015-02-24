@@ -48,7 +48,7 @@
     <!--</script>-->
 </head>
 
-<body role="document">
+<body role="document", style="position: relative;">
 
 
 
@@ -70,26 +70,34 @@
             <samp id="ggplotCode">
                 <!-- Canvas call -->
                 <span id="canvas" class="scope">
-                    <span class="ggplot">ggplot(
+                    <span class="element-name ggplot">ggplot(
                         <span class="data modifiable interactive">diamonds</span>,
                         <span class="ggplot-params"></span>
                         <!-- Aesthetics for canvas -->
+                        <span class="element-parameter">
+                        </span>
                         <span class="aes">aes(
-                            <span class="parameter modifiable interactive">x</span>
-                            <span class="equals interactive">=</span>
-                            <span class="argument modifiable interactive" data-type="varname">table</span>))
+                            <span class="aes-parameter">
+                                <span class="parameter modifiable interactive">x</span>
+                                <span class="equals">=</span>
+                                <span class="argument modifiable interactive" data-type="varname">table</span>
+                                <span class="add add-parameter interactive">(+)</span>))
+                            </span>
                         </span>
                     </span>
-                    <span class="ggplot_plus interactive">+</span>
+                    <span class="ggplot_plus">+</span>
                 </span>
                 <br/>
                 <!--1st element: so we have something to show on init-->
                 <!--(i.e. the user can just press a button to get a result-->
                 <span id="element_1" class="scope">
-                    <span class="element geom modifiable interactive">
-                        <span class="element-name">geom_density</span>(
-                        <span class="parameter modifiable interactive"></span>
-                        <span class="aes modifiable interactive"></span>)
+                    <span class="element geom modifiable">
+                        <span class="element-name interactive">geom_density</span>(
+                        <span class="element-parameter modifiable interactive"></span>
+                        <span class="aes modifiable interactive">
+                            <span class="aes-parameter">
+                            </span>
+                        </span>)
                     </span>
                 </span>
             </samp>
@@ -118,6 +126,8 @@
         </p>
     </footer>
 
+    <div id="element-selector" class="" style="left:0px; top 0px; position: absolute;"></div>
+
 </div> <!-- /container -->
 
 
@@ -135,6 +145,7 @@
 <!--<script type="text/javascript" src="js/vendor/sprintf.js"></script>-->
 <!--<script type="text/javascript" src="js/vendor/BVTouchable.js"></script>-->
 
+<script type="text/javascript" src="js/aes_data.js"></script>
 <script type="text/javascript" src="js/main.js"></script>
 <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
 <script src="js/vendor/ie10-viewport-bug-workaround.js"></script>
