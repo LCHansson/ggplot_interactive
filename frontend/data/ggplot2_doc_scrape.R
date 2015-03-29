@@ -3,6 +3,7 @@ library("dplyr")
 library("rvest")
 library("stringr")
 library("jsonlite")
+library(ggplot2)
 
 ## Init ----
 base_url = "http://docs.ggplot2.org/current/"
