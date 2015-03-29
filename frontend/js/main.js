@@ -86,8 +86,9 @@ function setupggDOM (data) {
         var scope = parent.attr('id');
 
         if (scope == "canvas") {
-            var active_geoms = $(".geom .element-name").text(),
-                allowed_aes = data.geom[active_geoms].aesthetics;
+            var active_geoms = $(".element .element-name.geom").text();
+            console.log("active geoms: " + active_geoms);
+            var allowed_aes = data.geom[active_geoms].aesthetics;
             // TODO:
             // - allowed_aes = active_geoms.forEach(function(x) { return data.geom[x].aesthetics; });
         } else {
@@ -123,7 +124,6 @@ function setupggDOM (data) {
             // Scope is global ('canvas')
             if (scope == "canvas") {
                 if ($(this).attr('data-type') == "varname") {
-                    // getDataset();
                     var active_dataset = $(this).parents(".scope").find(".data").text(),
                         data_names = data.datasets[active_dataset];
 
@@ -151,8 +151,11 @@ function setupggDOM (data) {
     });
 
     /* ELEMENT */
-    $(".element-name").click(function() {
-        console.log("Clicked an element");
+    $(".geom").click(function(event) {
+        var allowed_geoms = Object.getOwnPropertyNames(data.geom);
+        console.log(allowed_geoms);
+
+        addDialog(event, allowed_geoms, this);
     })
 }
 
