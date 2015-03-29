@@ -27,7 +27,7 @@
     <link href="css/TangleKit.css" rel="stylesheet">
 
     <!-- local styles -->
-    <link href="fonts/leaguespartan.css" rel="stylesheet">
+    <!--<link href="fonts/leaguespartan.css" rel="stylesheet">-->
     <link href="css/theme.css" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -70,19 +70,18 @@
             <samp id="ggplotCode">
                 <!-- Canvas call -->
                 <span id="canvas" class="scope">
-                    <span class="element-name ggplot">ggplot(
-                        <span class="data modifiable interactive">diamonds</span>,
-                        <span class="ggplot-params"></span>
-                        <!-- Aesthetics for canvas -->
-                        <span class="element-parameter">
-                        </span>
-                        <span class="aes">aes(
-                            <span class="aes-parameter">
-                                <span class="parameter modifiable interactive">x</span>
-                                <span class="equals">=</span>
-                                <span class="argument modifiable interactive" data-type="varname">table</span>
-                                <span class="add add-parameter interactive">(+)</span>))
-                            </span>
+                    <span class="element-name ggplot">ggplot</span>(
+                    <span class="data modifiable interactive">diamonds</span>,
+                    <span class="ggplot-params"></span>
+                    <!-- Aesthetics for canvas -->
+                    <span class="element-parameter">
+                    </span>
+                    <span class="aes">aes(
+                        <span class="aes-parameter">
+                            <span class="parameter modifiable interactive">x</span>
+                            <span class="equals">=</span>
+                            <span class="argument modifiable interactive" data-type="varname">table</span>
+                            <span class="add add-parameter interactive"></span>))
                         </span>
                     </span>
                     <span class="ggplot_plus">+</span>
@@ -92,7 +91,7 @@
                 <!--(i.e. the user can just press a button to get a result-->
                 <span id="element_1" class="scope">
                     <span class="element geom modifiable">
-                        <span class="element-name interactive">geom_density</span>(
+                        <span class="element-name interactive geom">geom_density</span>(
                         <span class="element-parameter modifiable interactive"></span>
                         <span class="aes modifiable interactive">
                             <span class="aes-parameter">
@@ -126,7 +125,8 @@
         </p>
     </footer>
 
-    <div id="element-selector" class="" style="left:0px; top 0px; position: absolute;"></div>
+    <div id="element-selector"></div>
+    <!--<div id="element-selector-content"></div>-->
 
 </div> <!-- /container -->
 

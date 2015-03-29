@@ -120,7 +120,38 @@ datasets = list(
 
 links[["datasets"]] = datasets
 
-# Write to JSON
+## Allowed aes arguments ----
+aes_args <- list(
+  x = list("data-type" = "varname"),
+  y = list("data-type" = "varname"),
+  alpha = list("data-type" = "float",
+               "range" = c(0,1)),
+  group = list("data-type" = "varname"),
+  fill = list("data-type" = "varname"),
+  colour = list("data-type" = "varname"),
+  linetype = list("data-type" = "integer",
+                  "range" = c(0:6)),
+  shape = list("data-type" = "integer",
+               "range" = c(0:10)),
+  size = list("data-type" = "integer",
+              "range" = -1),
+  angle = list("data-type" = "varname"),
+  fontface = list("data-type" = "freetext"),
+  hjust = list("data-type" = "float",
+               "range" = -1),
+  vjust = list("data-type" = "float",
+               "range" = -1),
+  lineheight = list("data-type" = "float",
+                    "range" = -1),
+  xend = list("data-type" = "float",
+              "range" = -1),
+  yend = list("data-type" = "float",
+              "range" = -1),
+  default = list("data-type" = "freetext")
+)
+
+
+## Write to JSON ----
 json <- jsonlite::toJSON(
   links,
   pretty = TRUE

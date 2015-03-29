@@ -16,7 +16,8 @@ h1, h2, h3, h4, h5, h6, .intro, .leaguespartansmall {
 
 h1 {
     text-transform: uppercase;
-    font-size: 60px;
+    /*font-size: 60px;*/
+    font-size: 24px;
     letter-spacing: 3px;
     text-rendering: optimizeLegibility;
     text-align: center;
@@ -24,14 +25,16 @@ h1 {
 
 h2 {
     text-transform: uppercase;
-    font-size: 36px;
+    /*font-size: 36px;*/
+    font-size: 18px;
     letter-spacing: 2px;
     text-rendering: optimizeLegibility;
     text-align: center;
 }
 
 h3, .intro {
-    font-size: 22px;
+    /*font-size: 22px;*/
+    font-size: 14px;
     line-height: 36px;
     text-align: center;
 }
@@ -493,4 +496,27 @@ table.dataTable .count {
 
 .modifiable {
     font-weight: bold;
+}
+
+.add-parameter {
+    color: #adadad !important;
+    font-size: x-small;
+    vertical-align: middle;
+}
+
+#element-selector {
+    position: absolute;
+    left: 0;
+    top: 0;
+
+    background-color: #fff;
+
+    border: 2px solid #333;
+    padding: 5px;
+
+    /*opacity:0.4;*/
+    /*filter: alpha(opacity=40);  *//* For IE8 and earlier */
+    /*z-index: 1000; *//* Important to set this */
+
+    display: none;
 }
