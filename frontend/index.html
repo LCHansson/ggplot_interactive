@@ -37,13 +37,13 @@
     <![endif]-->
 
     <!--<script>-->
-        <!--(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){-->
-            <!--(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),-->
-                <!--m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)-->
-        <!--})(window,document,'script','//www.google-analytics.com/analytics.js','ga');-->
+    <!--(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){-->
+    <!--(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),-->
+    <!--m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)-->
+    <!--})(window,document,'script','//www.google-analytics.com/analytics.js','ga');-->
 
-        <!--ga('create', 'UA-59172884-1', 'auto');-->
-        <!--ga('send', 'pageview');-->
+    <!--ga('create', 'UA-59172884-1', 'auto');-->
+    <!--ga('send', 'pageview');-->
 
     <!--</script>-->
 </head>
@@ -57,6 +57,7 @@
 
 <div class="container-fluid theme-showcase" role="main">
 
+<!--
     <header class="row">
         <div class="col-xs-12">
             <h1>interactive ggplot2</h1>
@@ -64,56 +65,56 @@
             <p class="intro">An interactive playground for <code><a href="http://ggplot2.org/">ggplot2</a></code></p>
         </div>
     </header>
+-->
 
     <section id="plotCode" class="row highlight example">
         <div class="col-xs-9" id="ggplotContainer">
             <samp id="ggplotCode">
                 <!-- Canvas call -->
                 <span id="canvas" class="scope">
-                    <span class="element-name ggplot">ggplot</span>(
-                    <span class="data modifiable interactive">diamonds</span>,
-                    <span class="ggplot-params"></span>
-                    <!-- Aesthetics for canvas -->
-                    <span class="element-parameter">
-                    </span>
-                    <span class="aes">aes(
-                        <span class="aes-parameter">
+                    <span class="element">
+                        <span class="element-name ggplot">ggplot</span>(
+                        <span class="data modifiable interactive">diamonds</span>,
+                        <span class="ggplot-params"></span>
+                        <!-- Aesthetics for canvas -->
+                        <!--<span class="element-parameter"></span>-->
+                        <span class="aes">aes(
                             <span class="parameter modifiable interactive">x</span>
                             <span class="equals">=</span>
                             <span class="argument modifiable interactive" data-type="varname">table</span>
-                            <span class="add add-parameter interactive"></span>))
+                            <span class="add add-parameter interactive">&hellip;</span>
+                            )
                         </span>
+                        <!--<span class="add add-parameter interactive">&hellip;</span>-->
+                        )
+                        <span class="ggplot_plus">+</span>
                     </span>
-                    <span class="ggplot_plus">+</span>
                 </span>
                 <br/>
                 <!--1st element: so we have something to show on init-->
                 <!--(i.e. the user can just press a button to get a result-->
                 <span id="element_1" class="scope">
-                    <span class="element modifiable">
-                        <span class="element-name interactive geom">geom_density</span>(
-                        <span class="element-parameter modifiable interactive"></span>
-                        <span class="aes modifiable interactive">
-                            <span class="aes-parameter">
-                            </span>
-                        </span>)
+                    <span class="element">
+                        <span class="element-name interactive modifiable geom">geom_density</span>(
+                        <span class="add add-parameter interactive">&hellip;</span>
+                        )
                     </span>
                 </span>
             </samp>
             <br/>
-            <samp id="addElementOperator" class="ggPlusElement gray">
-                <span id="add-element" class="interactive grey">add element...</span>
+            <samp id="addElementOperator" class="ggPlusElement">
+                <span class="add add-element interactive gray">add element...</span>
             </samp>
         </div>
         <div class="col-xs-2">
-            <button id="plotbutton" type="button">Draw plot</button>
+            <button id="plotbutton" type="button" class="codebutton btn">Draw plot</button>
+            <button id="copybutton" type="button" class="codebutton btn">Copy code</button>
         </div>
-        
+
     </section>
 
     <section id="plotRow" class="row">
         <div class="col-xs-10">
-            Plot div
             <div id="plotdiv"></div>
         </div>
     </section>
@@ -136,7 +137,7 @@
 <!-- Placed at the end of the document so the pages load faster -->
 <script src="js/vendor/jquery-1.11.2.min.js"></script>
 <script src="js/vendor/bootstrap.min.js"></script>
-<script src="js/vendor/docs.min.js"></script>
+<!--<script src="js/vendor/docs.min.js"></script>-->
 <script type="text/javascript" src="js/vendor/opencpu-0.4.js"> </script>
 <!--<script type="text/javascript" src="js/vendor/selectize.js"></script>-->
 <!--<script type="text/javascript" src="js/vendor/Tangle.js"></script>-->
