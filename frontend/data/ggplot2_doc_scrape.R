@@ -1,8 +1,8 @@
 ## Libraries ----
-library("dplyr")
-library("rvest")
-library("stringr")
-library("jsonlite")
+library(dplyr)
+library(rvest)
+library(stringr)
+library(jsonlite)
 library(ggplot2)
 
 ## Init ----
@@ -150,6 +150,8 @@ aes_args <- list(
               "range" = -1),
   default = list("data-type" = "freetext")
 )
+
+links[['aes_args']] = aes_args
 
 
 ## Write to JSON ----
