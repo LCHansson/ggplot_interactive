@@ -1,0 +1,1930 @@
+{
+  "elements": {
+    "geom": {
+      "geom_abline": {
+        "url": [
+          "http://docs.ggplot2.org/current/geom_abline.html"
+        ],
+        "is_doclink": [
+          true
+        ],
+        "doctype": [
+          "geom"
+        ],
+        "args": [
+          "show_guide",
+          "mapping",
+          "data",
+          "stat",
+          "position"
+        ],
+        "aesthetics": [
+          "alpha",
+          "colour",
+          "linetype",
+          "size"
+        ]
+      },
+      "geom_area": {
+        "url": [
+          "http://docs.ggplot2.org/current/geom_area.html"
+        ],
+        "is_doclink": [
+          true
+        ],
+        "doctype": [
+          "geom"
+        ],
+        "args": [
+          "mapping",
+          "data",
+          "stat",
+          "position",
+          "na.rm"
+        ]
+      },
+      "geom_bar": {
+        "url": [
+          "http://docs.ggplot2.org/current/geom_bar.html"
+        ],
+        "is_doclink": [
+          true
+        ],
+        "doctype": [
+          "geom"
+        ],
+        "args": [
+          "mapping",
+          "data",
+          "stat",
+          "position"
+        ],
+        "aesthetics": [
+          "x",
+          "alpha",
+          "colour",
+          "fill",
+          "linetype",
+          "size",
+          "weight"
+        ]
+      },
+      "geom_bin2d": {
+        "url": [
+          "http://docs.ggplot2.org/current/geom_bin2d.html"
+        ],
+        "is_doclink": [
+          true
+        ],
+        "doctype": [
+          "geom"
+        ],
+        "args": [
+          "mapping",
+          "data",
+          "stat",
+          "position"
+        ],
+        "aesthetics": [
+          "xmax",
+          "xmin",
+          "ymax",
+          "ymin",
+          "alpha",
+          "colour",
+          "fill",
+          "linetype",
+          "size",
+          "weight"
+        ]
+      },
+      "geom_blank": {
+        "url": [
+          "http://docs.ggplot2.org/current/geom_blank.html"
+        ],
+        "is_doclink": [
+          true
+        ],
+        "doctype": [
+          "geom"
+        ],
+        "args": [
+          "mapping",
+          "data",
+          "stat",
+          "position"
+        ]
+      },
+      "geom_boxplot": {
+        "url": [
+          "http://docs.ggplot2.org/current/geom_boxplot.html"
+        ],
+        "is_doclink": [
+          true
+        ],
+        "doctype": [
+          "geom"
+        ],
+        "args": [
+          "outlier.colour",
+          "outlier.shape",
+          "outlier.size",
+          "notch",
+          "notchwidth",
+          "mapping",
+          "data",
+          "stat",
+          "position"
+        ],
+        "aesthetics": [
+          "lower",
+          "middle",
+          "upper",
+          "x",
+          "ymax",
+          "ymin",
+          "alpha",
+          "colour",
+          "fill",
+          "linetype",
+          "shape",
+          "size",
+          "weight"
+        ]
+      },
+      "geom_contour": {
+        "url": [
+          "http://docs.ggplot2.org/current/geom_contour.html"
+        ],
+        "is_doclink": [
+          true
+        ],
+        "doctype": [
+          "geom"
+        ],
+        "args": [
+          "mapping",
+          "data",
+          "stat",
+          "position",
+          "na.rm",
+          "lineend",
+          "linejoin",
+          "linemitre"
+        ],
+        "aesthetics": [
+          "x",
+          "y",
+          "alpha",
+          "colour",
+          "linetype",
+          "size",
+          "weight"
+        ]
+      },
+      "geom_crossbar": {
+        "url": [
+          "http://docs.ggplot2.org/current/geom_crossbar.html"
+        ],
+        "is_doclink": [
+          true
+        ],
+        "doctype": [
+          "geom"
+        ],
+        "args": [
+          "fatten",
+          "mapping",
+          "data",
+          "stat",
+          "position"
+        ],
+        "aesthetics": [
+          "x",
+          "y",
+          "ymax",
+          "ymin",
+          "alpha",
+          "colour",
+          "fill",
+          "linetype",
+          "size"
+        ]
+      },
+      "geom_density": {
+        "url": [
+          "http://docs.ggplot2.org/current/geom_density.html"
+        ],
+        "is_doclink": [
+          true
+        ],
+        "doctype": [
+          "geom"
+        ],
+        "args": [
+          "mapping",
+          "data",
+          "stat",
+          "position",
+          "na.rm"
+        ],
+        "aesthetics": [
+          "x",
+          "y",
+          "alpha",
+          "colour",
+          "fill",
+          "linetype",
+          "size",
+          "weight"
+        ]
+      },
+      "geom_density2d": {
+        "url": [
+          "http://docs.ggplot2.org/current/geom_density2d.html"
+        ],
+        "is_doclink": [
+          true
+        ],
+        "doctype": [
+          "geom"
+        ],
+        "args": [
+          "mapping",
+          "data",
+          "stat",
+          "position",
+          "na.rm",
+          "lineend",
+          "linejoin",
+          "linemitre"
+        ],
+        "aesthetics": [
+          "x",
+          "y",
+          "alpha",
+          "colour",
+          "linetype",
+          "size"
+        ]
+      },
+      "geom_dotplot": {
+        "url": [
+          "http://docs.ggplot2.org/current/geom_dotplot.html"
+        ],
+        "is_doclink": [
+          true
+        ],
+        "doctype": [
+          "geom"
+        ],
+        "args": [
+          "binaxis",
+          "method",
+          "binwidth",
+          "binpositions",
+          "stackdir",
+          "stackratio",
+          "dotsize",
+          "stackgroups",
+          "mapping",
+          "data",
+          "stat",
+          "position",
+          "na.rm"
+        ],
+        "aesthetics": [
+          "x",
+          "y",
+          "alpha",
+          "colour",
+          "fill"
+        ]
+      },
+      "geom_errorbar": {
+        "url": [
+          "http://docs.ggplot2.org/current/geom_errorbar.html"
+        ],
+        "is_doclink": [
+          true
+        ],
+        "doctype": [
+          "geom"
+        ],
+        "args": [
+          "mapping",
+          "data",
+          "stat",
+          "position"
+        ],
+        "aesthetics": [
+          "x",
+          "ymax",
+          "ymin",
+          "alpha",
+          "colour",
+          "linetype",
+          "size",
+          "width"
+        ]
+      },
+      "geom_errorbarh": {
+        "url": [
+          "http://docs.ggplot2.org/current/geom_errorbarh.html"
+        ],
+        "is_doclink": [
+          true
+        ],
+        "doctype": [
+          "geom"
+        ],
+        "args": [
+          "mapping",
+          "data",
+          "stat",
+          "position"
+        ],
+        "aesthetics": [
+          "x",
+          "xmax",
+          "xmin",
+          "y",
+          "alpha",
+          "colour",
+          "height",
+          "linetype",
+          "size"
+        ]
+      },
+      "geom_freqpoly": {
+        "url": [
+          "http://docs.ggplot2.org/current/geom_freqpoly.html"
+        ],
+        "is_doclink": [
+          true
+        ],
+        "doctype": [
+          "geom"
+        ],
+        "args": [
+          "mapping",
+          "data",
+          "stat",
+          "position"
+        ],
+        "aesthetics": [
+          "alpha",
+          "colour",
+          "linetype",
+          "size"
+        ]
+      },
+      "geom_hex": {
+        "url": [
+          "http://docs.ggplot2.org/current/geom_hex.html"
+        ],
+        "is_doclink": [
+          true
+        ],
+        "doctype": [
+          "geom"
+        ],
+        "args": [
+          "mapping",
+          "data",
+          "stat",
+          "position"
+        ],
+        "aesthetics": [
+          "x",
+          "y",
+          "alpha",
+          "colour",
+          "fill",
+          "size"
+        ]
+      },
+      "geom_histogram": {
+        "url": [
+          "http://docs.ggplot2.org/current/geom_histogram.html"
+        ],
+        "is_doclink": [
+          true
+        ],
+        "doctype": [
+          "geom"
+        ],
+        "args": [
+          "mapping",
+          "data",
+          "stat",
+          "position"
+        ],
+        "aesthetics": [
+          "x",
+          "alpha",
+          "colour",
+          "fill",
+          "linetype",
+          "size",
+          "weight"
+        ]
+      },
+      "geom_hline": {
+        "url": [
+          "http://docs.ggplot2.org/current/geom_hline.html"
+        ],
+        "is_doclink": [
+          true
+        ],
+        "doctype": [
+          "geom"
+        ],
+        "args": [
+          "show_guide",
+          "mapping",
+          "data",
+          "stat",
+          "position"
+        ],
+        "aesthetics": [
+          "alpha",
+          "colour",
+          "linetype",
+          "size"
+        ]
+      },
+      "geom_jitter": {
+        "url": [
+          "http://docs.ggplot2.org/current/geom_jitter.html"
+        ],
+        "is_doclink": [
+          true
+        ],
+        "doctype": [
+          "geom"
+        ],
+        "args": [
+          "mapping",
+          "data",
+          "stat",
+          "position",
+          "na.rm"
+        ],
+        "aesthetics": [
+          "x",
+          "y",
+          "alpha",
+          "colour",
+          "fill",
+          "shape",
+          "size"
+        ]
+      },
+      "geom_line": {
+        "url": [
+          "http://docs.ggplot2.org/current/geom_line.html"
+        ],
+        "is_doclink": [
+          true
+        ],
+        "doctype": [
+          "geom"
+        ],
+        "args": [
+          "mapping",
+          "data",
+          "stat",
+          "position"
+        ],
+        "aesthetics": [
+          "x",
+          "y",
+          "alpha",
+          "colour",
+          "linetype",
+          "size"
+        ]
+      },
+      "geom_linerange": {
+        "url": [
+          "http://docs.ggplot2.org/current/geom_linerange.html"
+        ],
+        "is_doclink": [
+          true
+        ],
+        "doctype": [
+          "geom"
+        ],
+        "args": [
+          "mapping",
+          "data",
+          "stat",
+          "position"
+        ],
+        "aesthetics": [
+          "x",
+          "ymax",
+          "ymin",
+          "alpha",
+          "colour",
+          "linetype",
+          "size"
+        ]
+      },
+      "geom_map": {
+        "url": [
+          "http://docs.ggplot2.org/current/geom_map.html"
+        ],
+        "is_doclink": [
+          true
+        ],
+        "doctype": [
+          "geom"
+        ],
+        "args": [
+          "map",
+          "mapping",
+          "data",
+          "stat"
+        ],
+        "aesthetics": [
+          "map_id",
+          "alpha",
+          "colour",
+          "fill",
+          "linetype",
+          "size"
+        ]
+      },
+      "geom_path": {
+        "url": [
+          "http://docs.ggplot2.org/current/geom_path.html"
+        ],
+        "is_doclink": [
+          true
+        ],
+        "doctype": [
+          "geom"
+        ],
+        "args": [
+          "lineend",
+          "linejoin",
+          "linemitre",
+          "arrow",
+          "mapping",
+          "data",
+          "stat",
+          "position",
+          "na.rm"
+        ],
+        "aesthetics": [
+          "x",
+          "y",
+          "alpha",
+          "colour",
+          "linetype",
+          "size"
+        ]
+      },
+      "geom_point": {
+        "url": [
+          "http://docs.ggplot2.org/current/geom_point.html"
+        ],
+        "is_doclink": [
+          true
+        ],
+        "doctype": [
+          "geom"
+        ],
+        "args": [
+          "mapping",
+          "data",
+          "stat",
+          "position",
+          "na.rm"
+        ],
+        "aesthetics": [
+          "x",
+          "y",
+          "alpha",
+          "colour",
+          "fill",
+          "shape",
+          "size"
+        ]
+      },
+      "geom_pointrange": {
+        "url": [
+          "http://docs.ggplot2.org/current/geom_pointrange.html"
+        ],
+        "is_doclink": [
+          true
+        ],
+        "doctype": [
+          "geom"
+        ],
+        "args": [
+          "mapping",
+          "data",
+          "stat",
+          "position"
+        ],
+        "aesthetics": [
+          "x",
+          "y",
+          "ymax",
+          "ymin",
+          "alpha",
+          "colour",
+          "fill",
+          "linetype",
+          "shape",
+          "size"
+        ]
+      },
+      "geom_polygon": {
+        "url": [
+          "http://docs.ggplot2.org/current/geom_polygon.html"
+        ],
+        "is_doclink": [
+          true
+        ],
+        "doctype": [
+          "geom"
+        ],
+        "args": [
+          "mapping",
+          "data",
+          "stat",
+          "position"
+        ],
+        "aesthetics": [
+          "x",
+          "y",
+          "alpha",
+          "colour",
+          "fill",
+          "linetype",
+          "size"
+        ]
+      },
+      "geom_quantile": {
+        "url": [
+          "http://docs.ggplot2.org/current/geom_quantile.html"
+        ],
+        "is_doclink": [
+          true
+        ],
+        "doctype": [
+          "geom"
+        ],
+        "args": [
+          "mapping",
+          "data",
+          "stat",
+          "position",
+          "na.rm",
+          "lineend",
+          "linejoin",
+          "linemitre"
+        ],
+        "aesthetics": [
+          "x",
+          "y",
+          "alpha",
+          "colour",
+          "linetype",
+          "size",
+          "weight"
+        ]
+      },
+      "geom_raster": {
+        "url": [
+          "http://docs.ggplot2.org/current/geom_raster.html"
+        ],
+        "is_doclink": [
+          true
+        ],
+        "doctype": [
+          "geom"
+        ],
+        "args": [
+          "hjust,vjust",
+          "interpolate",
+          "mapping",
+          "data",
+          "stat",
+          "position"
+        ],
+        "aesthetics": [
+          "x",
+          "y",
+          "alpha",
+          "fill"
+        ]
+      },
+      "geom_rect": {
+        "url": [
+          "http://docs.ggplot2.org/current/geom_rect.html"
+        ],
+        "is_doclink": [
+          true
+        ],
+        "doctype": [
+          "geom"
+        ],
+        "args": [
+          "mapping",
+          "data",
+          "stat",
+          "position"
+        ],
+        "aesthetics": [
+          "xmax",
+          "xmin",
+          "ymax",
+          "ymin",
+          "alpha",
+          "colour",
+          "fill",
+          "linetype",
+          "size"
+        ]
+      },
+      "geom_ribbon": {
+        "url": [
+          "http://docs.ggplot2.org/current/geom_ribbon.html"
+        ],
+        "is_doclink": [
+          true
+        ],
+        "doctype": [
+          "geom"
+        ],
+        "args": [
+          "mapping",
+          "data",
+          "stat",
+          "position",
+          "na.rm"
+        ],
+        "aesthetics": [
+          "x",
+          "ymax",
+          "ymin",
+          "alpha",
+          "colour",
+          "fill",
+          "linetype",
+          "size"
+        ]
+      },
+      "geom_rug": {
+        "url": [
+          "http://docs.ggplot2.org/current/geom_rug.html"
+        ],
+        "is_doclink": [
+          true
+        ],
+        "doctype": [
+          "geom"
+        ],
+        "args": [
+          "sides",
+          "mapping",
+          "data",
+          "stat",
+          "position"
+        ],
+        "aesthetics": [
+          "alpha",
+          "colour",
+          "linetype",
+          "size"
+        ]
+      },
+      "geom_segment": {
+        "url": [
+          "http://docs.ggplot2.org/current/geom_segment.html"
+        ],
+        "is_doclink": [
+          true
+        ],
+        "doctype": [
+          "geom"
+        ],
+        "args": [
+          "arrow",
+          "lineend",
+          "mapping",
+          "data",
+          "stat",
+          "position",
+          "na.rm"
+        ],
+        "aesthetics": [
+          "x",
+          "xend",
+          "y",
+          "yend",
+          "alpha",
+          "colour",
+          "linetype",
+          "size"
+        ]
+      },
+      "geom_smooth": {
+        "url": [
+          "http://docs.ggplot2.org/current/geom_smooth.html"
+        ],
+        "is_doclink": [
+          true
+        ],
+        "doctype": [
+          "geom"
+        ],
+        "args": [
+          "mapping",
+          "data",
+          "stat",
+          "position"
+        ],
+        "aesthetics": [
+          "x",
+          "y",
+          "alpha",
+          "colour",
+          "fill",
+          "linetype",
+          "size",
+          "weight"
+        ]
+      },
+      "geom_step": {
+        "url": [
+          "http://docs.ggplot2.org/current/geom_step.html"
+        ],
+        "is_doclink": [
+          true
+        ],
+        "doctype": [
+          "geom"
+        ],
+        "args": [
+          "direction",
+          "mapping",
+          "data",
+          "stat",
+          "position"
+        ],
+        "aesthetics": [
+          "alpha",
+          "colour",
+          "linetype",
+          "size"
+        ]
+      },
+      "geom_text": {
+        "url": [
+          "http://docs.ggplot2.org/current/geom_text.html"
+        ],
+        "is_doclink": [
+          true
+        ],
+        "doctype": [
+          "geom"
+        ],
+        "args": [
+          "parse",
+          "mapping",
+          "data",
+          "stat",
+          "position"
+        ],
+        "aesthetics": [
+          "label",
+          "x",
+          "y",
+          "alpha",
+          "angle",
+          "colour",
+          "family",
+          "fontface",
+          "hjust",
+          "lineheight",
+          "size",
+          "vjust"
+        ]
+      },
+      "geom_tile": {
+        "url": [
+          "http://docs.ggplot2.org/current/geom_tile.html"
+        ],
+        "is_doclink": [
+          true
+        ],
+        "doctype": [
+          "geom"
+        ],
+        "args": [
+          "mapping",
+          "data",
+          "stat",
+          "position"
+        ],
+        "aesthetics": [
+          "x",
+          "y",
+          "alpha",
+          "colour",
+          "fill",
+          "linetype",
+          "size"
+        ]
+      },
+      "geom_violin": {
+        "url": [
+          "http://docs.ggplot2.org/current/geom_violin.html"
+        ],
+        "is_doclink": [
+          true
+        ],
+        "doctype": [
+          "geom"
+        ],
+        "args": [
+          "trim",
+          "scale",
+          "mapping",
+          "data",
+          "stat",
+          "position"
+        ],
+        "aesthetics": [
+          "x",
+          "y",
+          "alpha",
+          "colour",
+          "fill",
+          "linetype",
+          "size",
+          "weight"
+        ]
+      },
+      "geom_vline": {
+        "url": [
+          "http://docs.ggplot2.org/current/geom_vline.html"
+        ],
+        "is_doclink": [
+          true
+        ],
+        "doctype": [
+          "geom"
+        ],
+        "args": [
+          "show_guide",
+          "mapping",
+          "data",
+          "stat",
+          "position"
+        ],
+        "aesthetics": [
+          "alpha",
+          "colour",
+          "linetype",
+          "size"
+        ]
+      }
+    },
+    "stat": {
+      "stat_bin": {
+        "url": [
+          "http://docs.ggplot2.org/current/stat_bin.html"
+        ],
+        "is_doclink": [
+          true
+        ],
+        "doctype": [
+          "stat"
+        ],
+        "args": [
+          "binwidth",
+          "breaks",
+          "origin",
+          "width",
+          "right",
+          "drop",
+          "mapping",
+          "data",
+          "geom",
+          "position"
+        ],
+        "aesthetics": [
+          "x",
+          "y"
+        ]
+      },
+      "stat_bin2d": {
+        "url": [
+          "http://docs.ggplot2.org/current/stat_bin2d.html"
+        ],
+        "is_doclink": [
+          true
+        ],
+        "doctype": [
+          "stat"
+        ],
+        "args": [
+          "bins",
+          "drop",
+          "mapping",
+          "data",
+          "geom",
+          "position"
+        ],
+        "aesthetics": [
+          "x",
+          "y",
+          "fill"
+        ]
+      },
+      "stat_bindot": {
+        "url": [
+          "http://docs.ggplot2.org/current/stat_bindot.html"
+        ],
+        "is_doclink": [
+          true
+        ],
+        "doctype": [
+          "stat"
+        ],
+        "args": [
+          "binaxis",
+          "method",
+          "binwidth",
+          "binpositions",
+          "origin",
+          "right",
+          "width",
+          "na.rm",
+          "drop",
+          "mapping",
+          "data",
+          "geom",
+          "position"
+        ],
+        "aesthetics": [
+          "x",
+          "y"
+        ]
+      },
+      "stat_binhex": {
+        "url": [
+          "http://docs.ggplot2.org/current/stat_binhex.html"
+        ],
+        "is_doclink": [
+          true
+        ],
+        "doctype": [
+          "stat"
+        ],
+        "args": [
+          "bins",
+          "na.rm",
+          "mapping",
+          "data",
+          "geom",
+          "position"
+        ],
+        "aesthetics": [
+          "x",
+          "y",
+          "fill"
+        ]
+      },
+      "stat_boxplot": {
+        "url": [
+          "http://docs.ggplot2.org/current/stat_boxplot.html"
+        ],
+        "is_doclink": [
+          true
+        ],
+        "doctype": [
+          "stat"
+        ],
+        "args": [
+          "coef",
+          "na.rm",
+          "mapping",
+          "data",
+          "geom",
+          "position"
+        ],
+        "aesthetics": [
+          "x",
+          "y"
+        ]
+      },
+      "stat_contour": {
+        "url": [
+          "http://docs.ggplot2.org/current/stat_contour.html"
+        ],
+        "is_doclink": [
+          true
+        ],
+        "doctype": [
+          "stat"
+        ],
+        "args": [
+          "na.rm",
+          "mapping",
+          "data",
+          "geom",
+          "position"
+        ],
+        "aesthetics": [
+          "x",
+          "y",
+          "z",
+          "order"
+        ]
+      },
+      "stat_density": {
+        "url": [
+          "http://docs.ggplot2.org/current/stat_density.html"
+        ],
+        "is_doclink": [
+          true
+        ],
+        "doctype": [
+          "stat"
+        ],
+        "args": [
+          "adjust",
+          "kernel",
+          "trim",
+          "na.rm",
+          "mapping",
+          "data",
+          "geom",
+          "position"
+        ],
+        "aesthetics": [
+          "x",
+          "fill",
+          "y"
+        ]
+      },
+      "stat_density2d": {
+        "url": [
+          "http://docs.ggplot2.org/current/stat_density2d.html"
+        ],
+        "is_doclink": [
+          true
+        ],
+        "doctype": [
+          "stat"
+        ],
+        "args": [
+          "contour",
+          "n",
+          "na.rm",
+          "mapping",
+          "data",
+          "geom",
+          "position"
+        ],
+        "aesthetics": [
+          "x",
+          "y",
+          "colour",
+          "size"
+        ]
+      },
+      "stat_ecdf": {
+        "url": [
+          "http://docs.ggplot2.org/current/stat_ecdf.html"
+        ],
+        "is_doclink": [
+          true
+        ],
+        "doctype": [
+          "stat"
+        ],
+        "args": [
+          "n",
+          "mapping",
+          "data",
+          "geom",
+          "position"
+        ]
+      },
+      "stat_function": {
+        "url": [
+          "http://docs.ggplot2.org/current/stat_function.html"
+        ],
+        "is_doclink": [
+          true
+        ],
+        "doctype": [
+          "stat"
+        ],
+        "args": [
+          "fun",
+          "n",
+          "args",
+          "mapping",
+          "data",
+          "geom",
+          "position"
+        ],
+        "aesthetics": [
+          "y"
+        ]
+      },
+      "stat_identity": {
+        "url": [
+          "http://docs.ggplot2.org/current/stat_identity.html"
+        ],
+        "is_doclink": [
+          true
+        ],
+        "doctype": [
+          "stat"
+        ],
+        "args": [
+          "mapping",
+          "data",
+          "geom",
+          "position",
+          "width",
+          "height"
+        ],
+        "aesthetics": [
+          ""
+        ]
+      },
+      "stat_qq": {
+        "url": [
+          "http://docs.ggplot2.org/current/stat_qq.html"
+        ],
+        "is_doclink": [
+          true
+        ],
+        "doctype": [
+          "stat"
+        ],
+        "args": [
+          "distribution",
+          "dparams",
+          "na.rm",
+          "mapping",
+          "data",
+          "geom",
+          "position"
+        ],
+        "aesthetics": [
+          "sample",
+          "x",
+          "y"
+        ]
+      },
+      "stat_quantile": {
+        "url": [
+          "http://docs.ggplot2.org/current/stat_quantile.html"
+        ],
+        "is_doclink": [
+          true
+        ],
+        "doctype": [
+          "stat"
+        ],
+        "args": [
+          "quantiles",
+          "formula",
+          "method",
+          "na.rm",
+          "mapping",
+          "data",
+          "geom",
+          "position"
+        ],
+        "aesthetics": [
+          "x",
+          "y"
+        ]
+      },
+      "stat_smooth": {
+        "url": [
+          "http://docs.ggplot2.org/current/stat_smooth.html"
+        ],
+        "is_doclink": [
+          true
+        ],
+        "doctype": [
+          "stat"
+        ],
+        "args": [
+          "method",
+          "formula",
+          "se",
+          "fullrange",
+          "level",
+          "n",
+          "na.rm",
+          "mapping",
+          "data",
+          "geom",
+          "position"
+        ],
+        "aesthetics": [
+          "x",
+          "y"
+        ]
+      },
+      "stat_spoke": {
+        "url": [
+          "http://docs.ggplot2.org/current/stat_spoke.html"
+        ],
+        "is_doclink": [
+          true
+        ],
+        "doctype": [
+          "stat"
+        ],
+        "args": [
+          "mapping",
+          "data",
+          "geom",
+          "position"
+        ],
+        "aesthetics": [
+          "angle",
+          "radius",
+          "x",
+          "y",
+          "xend",
+          "yend"
+        ]
+      },
+      "stat_sum": {
+        "url": [
+          "http://docs.ggplot2.org/current/stat_sum.html"
+        ],
+        "is_doclink": [
+          true
+        ],
+        "doctype": [
+          "stat"
+        ],
+        "args": [
+          "mapping",
+          "data",
+          "geom",
+          "position"
+        ],
+        "aesthetics": [
+          "x",
+          "y",
+          "size"
+        ]
+      },
+      "stat_summary": {
+        "url": [
+          "http://docs.ggplot2.org/current/stat_summary.html"
+        ],
+        "is_doclink": [
+          true
+        ],
+        "doctype": [
+          "stat"
+        ],
+        "args": [
+          "mapping",
+          "data",
+          "geom",
+          "position"
+        ],
+        "aesthetics": [
+          "x",
+          "y"
+        ]
+      },
+      "stat_summary_hex": {
+        "url": [
+          "http://docs.ggplot2.org/current/stat_summary_hex.html"
+        ],
+        "is_doclink": [
+          true
+        ],
+        "doctype": [
+          "stat"
+        ],
+        "args": [
+          "bins",
+          "drop",
+          "fun",
+          "mapping",
+          "data",
+          "geom",
+          "position"
+        ],
+        "aesthetics": [
+          "stat_summaryhex",
+          "x",
+          "y",
+          "z",
+          "fill",
+          "stat_summary2d",
+          "stat_summary",
+          "x",
+          "y",
+          "z",
+          "stat_summary-hex",
+          "x",
+          "y",
+          "z"
+        ]
+      },
+      "stat_summary2d": {
+        "url": [
+          "http://docs.ggplot2.org/current/stat_summary2d.html"
+        ],
+        "is_doclink": [
+          true
+        ],
+        "doctype": [
+          "stat"
+        ],
+        "args": [
+          "bins",
+          "drop",
+          "fun",
+          "mapping",
+          "data",
+          "geom",
+          "position"
+        ],
+        "aesthetics": [
+          "x",
+          "y",
+          "z",
+          "fill",
+          "stat_summary",
+          "x",
+          "y",
+          "z",
+          "x",
+          "y",
+          "z"
+        ]
+      },
+      "stat_unique": {
+        "url": [
+          "http://docs.ggplot2.org/current/stat_unique.html"
+        ],
+        "is_doclink": [
+          true
+        ],
+        "doctype": [
+          "stat"
+        ],
+        "args": [
+          "mapping",
+          "data",
+          "geom",
+          "position"
+        ],
+        "aesthetics": [
+          ""
+        ]
+      },
+      "stat_ydensity": {
+        "url": [
+          "http://docs.ggplot2.org/current/stat_ydensity.html"
+        ],
+        "is_doclink": [
+          true
+        ],
+        "doctype": [
+          "stat"
+        ],
+        "args": [
+          "trim",
+          "scale",
+          "na.rm",
+          "mapping",
+          "data",
+          "geom",
+          "position",
+          "adjust",
+          "kernel"
+        ],
+        "aesthetics": [
+          "x",
+          "y"
+        ]
+      }
+    }
+  },
+  "parameters": {
+    "show_guide": {
+      "value": [""],
+      "type": "boolean",
+      "display": true
+    },
+    "mapping": {
+      "value": ["aes", "aes_string"],
+      "type": "aes",
+      "display": true
+    },
+    "data": {
+      "value": [""],
+      "type": "dataset",
+      "display": true
+    },
+    "stat": {
+      "value": ["bin", "identity"],
+      "type": "string",
+      "display": true
+    },
+    "position": {
+      "value": ["position_dodge", "position_stack", "position_fill", "position_identity", "position_jitter"],
+      "type": "function",
+      "display": true
+    },
+    "binwidth": {
+      "value": [1],
+      "type": "numeric",
+      "display": true
+    },
+    "breaks": {
+      "value": [""],
+      "type": "",
+      "display": false
+    },
+    "origin": {
+      "value": [""],
+      "type": "",
+      "display": false
+    },
+    "width": {
+      "value": [""],
+      "type": "",
+      "display": false
+    },
+    "right": {
+      "value": [""],
+      "type": "",
+      "display": false
+    },
+    "drop": {
+      "value": [""],
+      "type": "",
+      "display": false
+    },
+    "geom": {
+      "value": [""],
+      "type": "freetext",
+      "display": false
+    },
+    "na.rm": {
+      "value": [""],
+      "type": "boolean",
+      "display": false
+    }
+  },
+  "functions": {
+    "position": {
+      "position_dodge": {
+        "url": [
+          "http://docs.ggplot2.org/current/position_dodge.html"
+        ],
+        "is_doclink": [
+          true
+        ],
+        "doctype": [
+          "position"
+        ],
+        "args": [
+          "width",
+          "height"
+        ]
+      },
+      "position_fill": {
+        "url": [
+          "http://docs.ggplot2.org/current/position_fill.html"
+        ],
+        "is_doclink": [
+          true
+        ],
+        "doctype": [
+          "position"
+        ],
+        "args": [
+          "width",
+          "height"
+        ]
+      },
+      "position_identity": {
+        "url": [
+          "http://docs.ggplot2.org/current/position_identity.html"
+        ],
+        "is_doclink": [
+          true
+        ],
+        "doctype": [
+          "position"
+        ],
+        "args": [
+          "width",
+          "height"
+        ]
+      },
+      "position_stack": {
+        "url": [
+          "http://docs.ggplot2.org/current/position_stack.html"
+        ],
+        "is_doclink": [
+          true
+        ],
+        "doctype": [
+          "position"
+        ],
+        "args": [
+          "width",
+          "height"
+        ]
+      },
+      "position_jitter": {
+        "url": [
+          "http://docs.ggplot2.org/current/position_jitter.html"
+        ],
+        "is_doclink": [
+          true
+        ],
+        "doctype": [
+          "position"
+        ],
+        "args": [
+          "width",
+          "height"
+        ]
+      }
+    },
+    "aes": {
+      "aes_all": {
+        "url": [
+          "http://docs.ggplot2.org/current/aes_all.html"
+        ],
+        "is_doclink": [
+          true
+        ],
+        "doctype": [
+          "aes"
+        ],
+        "args": [
+          "vars"
+        ]
+      },
+      "aes_auto": {
+        "url": [
+          "http://docs.ggplot2.org/current/aes_auto.html"
+        ],
+        "is_doclink": [
+          true
+        ],
+        "doctype": [
+          "aes"
+        ],
+        "args": [
+          "data"
+        ]
+      },
+      "aes_string": {
+        "url": [
+          "http://docs.ggplot2.org/current/aes_string.html"
+        ],
+        "is_doclink": [
+          true
+        ],
+        "doctype": [
+          "aes"
+        ],
+        "args": [
+
+        ]
+      },
+      "aes_colour_fill_alpha": {
+        "url": [
+          "http://docs.ggplot2.org/current/aes_colour_fill_alpha.html"
+        ],
+        "is_doclink": [
+          true
+        ],
+        "doctype": [
+          "aes"
+        ]
+      },
+      "aes_group_order": {
+        "url": [
+          "http://docs.ggplot2.org/current/aes_group_order.html"
+        ],
+        "is_doclink": [
+          true
+        ],
+        "doctype": [
+          "aes"
+        ]
+      },
+      "aes_linetype_size_shape": {
+        "url": [
+          "http://docs.ggplot2.org/current/aes_linetype_size_shape.html"
+        ],
+        "is_doclink": [
+          true
+        ],
+        "doctype": [
+          "aes"
+        ]
+      },
+      "aes_position": {
+        "url": [
+          "http://docs.ggplot2.org/current/aes_position.html"
+        ],
+        "is_doclink": [
+          true
+        ],
+        "doctype": [
+          "aes"
+        ]
+      }
+    }
+  },
+  "aes_args": {
+    "x": {
+      "data-type": [
+        "varname"
+      ]
+    },
+    "y": {
+      "data-type": [
+        "varname"
+      ]
+    },
+    "alpha": {
+      "data-type": [
+        "float"
+      ],
+      "range": [
+        0,
+        1
+      ]
+    },
+    "group": {
+      "data-type": [
+        "varname"
+      ]
+    },
+    "fill": {
+      "data-type": [
+        "varname"
+      ]
+    },
+    "colour": {
+      "data-type": [
+        "varname"
+      ]
+    },
+    "linetype": {
+      "data-type": [
+        "integer"
+      ],
+      "range": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    "shape": {
+      "data-type": [
+        "integer"
+      ],
+      "range": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ]
+    },
+    "size": {
+      "data-type": [
+        "integer"
+      ],
+      "range": [
+        -1
+      ]
+    },
+    "angle": {
+      "data-type": [
+        "varname"
+      ]
+    },
+    "fontface": {
+      "data-type": [
+        "freetext"
+      ]
+    },
+    "hjust": {
+      "data-type": [
+        "float"
+      ],
+      "range": [
+        -1
+      ]
+    },
+    "vjust": {
+      "data-type": [
+        "float"
+      ],
+      "range": [
+        -1
+      ]
+    },
+    "lineheight": {
+      "data-type": [
+        "float"
+      ],
+      "range": [
+        -1
+      ]
+    },
+    "xend": {
+      "data-type": [
+        "float"
+      ],
+      "range": [
+        -1
+      ]
+    },
+    "yend": {
+      "data-type": [
+        "float"
+      ],
+      "range": [
+        -1
+      ]
+    },
+    "default": {
+      "data-type": [
+        "freetext"
+      ]
+    }
+  },
+  "datasets": {
+    "diamonds": [
+      "carat",
+      "cut",
+      "color",
+      "clarity",
+      "depth",
+      "table",
+      "price",
+      "x",
+      "y",
+      "z"
+    ],
+    "mtcars": [
+      "mpg",
+      "cyl",
+      "disp",
+      "hp",
+      "drat",
+      "wt",
+      "qsec",
+      "vs",
+      "am",
+      "gear",
+      "carb"
+    ],
+    "iris": [
+      "Sepal.Length",
+      "Sepal.Width",
+      "Petal.Length",
+      "Petal.Width",
+      "Species"
+    ]
+  }
+}
