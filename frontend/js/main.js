@@ -3,7 +3,7 @@
  */
 
 
-function addDialog(event, data, caller) {
+function addDialog(event, data, type, caller) {
     var $dialog = $('#element-selector'),
     //$dialog_content = $("#element-selector-content")
         x = event.pageX,
@@ -18,9 +18,37 @@ function addDialog(event, data, caller) {
         $dialog.append('<span class="callback-element">' + el + '</span><br/>');
     });
 
+    var inner_html = "";
     $(".callback-element").click(function(e) {
-        $(caller).text($(this).text());
-    })
+        switch (type) {
+            case "function":
+                inner_html = $(this).text() +
+                '(' +
+                '<span class="add add-parameter interactive">&hellip;</span>' +
+                ')'
+                break;
+            case "aes":
+                inner_html = $(this).text() +
+                '<span class="aes">' +
+                $(this).text() +
+                '(' +
+                '<span class="parameter modifiable interactive">x</span>' +
+                '<span class="equals">=</span>' +
+                '<span class="argument modifiable interactive" data-type="varname">table</span>' +
+                '<span class="add add-parameter interactive">&hellip;</span>' +
+                ')' +
+                '</span>';
+                break;
+            default:
+                inner_html = $(this).text();
+                break;
+        }
+
+        console.log("Content to add: " + inner_html);
+        $(caller).html(inner_html);
+
+    });
+
 
     // Show modal
     if(!$($dialog).is(':visible'))
@@ -71,7 +99,7 @@ function setupggDOM (data) {
         console.log("Clicked a data set name.");
         var allowed_datasets = $(this).data("allowed_datasets");
 
-        addDialog(event, allowed_datasets, this);
+        addDialog(event, allowed_datasets, "dataset", this);
 
         // TODO:
         // - cycleAllAesUsingThisData();
@@ -89,20 +117,19 @@ function setupggDOM (data) {
                 envir = $(this).parent().attr("class"),
                 scope_id = $scope.attr('id');
 
-
             switch (envir) {
                 case "aes":
                     if (scope_id == "canvas") {
                         var geom_name = $(".geom").text();
                         console.log("active geoms: " + geom_name);
 
-                        var allowed_params = data.geom[geom_name].aesthetics;
+                        var allowed_params = data.elements.geom[geom_name].aesthetics;
                     } else {
                         //    TODO:
                         //    - getLocallyScopedElement();
                         //    - getAllowedAes();
                         var geom_name = $(this).siblings(".geom").text(),
-                            allowed_params = data.geom[geom_name].args;
+                            allowed_params = data.elements.geom[geom_name].args;
 
                         console.log("parent geom: " + geom_name);
                     }
@@ -111,8 +138,18 @@ function setupggDOM (data) {
 
                     break;
                 case "element":
-                    var element_name = $(this).siblings(".element-name").text()
-                        allowed_params = data.geom[element_name].args;
+                    var element_name = $(this).siblings(".element-name").text(),
+                        all_params = data.elements.geom[element_name].args,
+                        allowed_params = [];
+
+                    console.log("all_params: " + all_params);
+
+                    for (var i = 0; i < all_params.length; i++) {
+                        //console.log("parameter: " + all_params[i]);
+                        var p = data.parameters[all_params[i]];
+                        //console.log("p.display: " + p.display);
+                        allowed_params.push(all_params[i]);
+                    }
 
                     console.log(allowed_params);
                     break;
@@ -120,7 +157,7 @@ function setupggDOM (data) {
 
 
             //$(this).text(next_name);
-            addDialog(event, allowed_params, this);
+            addDialog(event, allowed_params, "string", this);
 
             // modifyAesArgument();
             //var valid_arguments = getValidAesArguments(current_aesthetic);
@@ -136,44 +173,50 @@ function setupggDOM (data) {
 
         $(".argument").click(function (event) {
             // Get scope
-            var parent = $(this).parents(".scope");
-            if (parent.attr('class') != "scope") {
-                return;
-            }
-
-            var scope = parent.attr('id'),
-                parent_class = $(this).parent().attr('class');
+            var $scope = $(this).parents(".scope"),
+                scope_id = $scope.attr('id'),
+                $parent = $(this).parent(),
+                parent_class = $parent.attr("class");
 
             console.log("Parent class: " + parent_class);
 
             // If parent is aes, make aes modifications.
-            if (parent_class == 'aes') {
-                // Scope is global ('canvas')
-                if (scope == "canvas") {
-                    if ($(this).attr('data-type') == "varname") {
-                        var active_dataset = $(this).parents(".scope").find(".data").text(),
-                            data_names = data.datasets[active_dataset];
+            switch(parent_class) {
+                case "aes": // Parameter is an aesthetic
+                    // Scope is global ('canvas')
+                    if (scope_id == "canvas") {
+                        if ($(this).attr('data-type') == "varname") {
+                            var active_dataset = $scope.find(".data").text(),
+                                data_names = data.datasets[active_dataset];
 
-                        console.log("Clicked an aes argument that is a variable name.\n\tCurrent dataset: " + active_dataset + "\n\tAvailable names: " + data_names);
-                        addDialog(event, data_names, this);
+                            console.log("Clicked an aes argument that is a variable name.\n\tCurrent dataset: " + active_dataset + "\n\tAvailable names: " + data_names);
+                            addDialog(event, data_names, this);
+                        }
                     }
-                }
-                // Scope is local (geom or stat)
-                else {
-                    console.log("Clicked an aes argument with local scope.");
-                }
-            }
+                    // Scope is local (geom or stat)
+                    else {
+                        console.log("Clicked an aes argument with local scope.");
+                    }
+                    break;
+                case "element": // Parameter is an element parameter
+                    // Global scope
+                    if (scope_id == "canvas") {
+                        // TODO:
+                        // Implement global parameters?
+                        console.log("Clicked an element argument with global scope.");
+                    }
+                    // Local scope
+                    else {
+                        console.log("Clicked an element argument with local scope.");
+                        console.log(data.parameters["mapping"]);
 
-            // Parent is not aes, but element
-            else {
-                // Global scope
-                if (scope == "canvas") {
-                    console.log("Clicked an element argument with global scope.");
-                }
-                // Local scope
-                else {
-                    console.log("Clicked an element argument with local scope.");
-                }
+                        var $param = $(this).prevUntil(".parameter").prev(".parameter"),
+                            param_name = $param.text(),
+                            param_data = data.parameters[param_name];
+                        //console.log("param_name: " + param_name + "\nparam_data.type: " + data.parameters["mapping"].type);
+                        addDialog(event, param_data.value, param_data.type, this);
+                    }
+                    break;
             }
         });
     }
@@ -185,7 +228,7 @@ function setupggDOM (data) {
         $(".geom").unbind("click");
 
         $(".geom").click(function (event) {
-            var allowed_geoms = Object.getOwnPropertyNames(data.geom);
+            var allowed_geoms = Object.getOwnPropertyNames(data.elements.geom);
             console.log(allowed_geoms);
 
             addDialog(event, allowed_geoms, this);
@@ -234,7 +277,7 @@ function setupggDOM (data) {
 $(function() {
     $.ajax({
         type: "GET",
-        url: "./data/ggplot_docs.json",
+        url: "./data/ggplot_docs_scraped.json",
         dataType: "json",
         success: function (response) {
             window.ggplot_docs = response;
